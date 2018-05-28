@@ -29,4 +29,12 @@ class Ups extends Model
         $this->mby = Auth::user()->name;
         $this->save();
     }
+    
+    public function savenonData($data)
+    {
+        $this->locid = $data['locationid'];
+        $this->available = $data['upsRadio'];
+        $this->mby = Auth::user()->name;
+        $this->save();
+    }
 }

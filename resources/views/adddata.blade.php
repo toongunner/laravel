@@ -204,15 +204,15 @@
 		{{csrf_field()}}					
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioN">ไม่มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioN" value="no">ไม่มี</label></div>
         		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbQty" name="mdbQty" placeholder="จำนวน"></div>
         	</div> 
         	</div>
         	<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbLP">Load Center Panel (LP)</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbMDP">Main Distribution Panel (MDB)</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbLP" value="LP">Load Center Panel (LP)</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbMDP" value="MDB">Main Distribution Panel (MDB)</label></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
@@ -258,29 +258,29 @@
 					<tr>
 					<td>1</td>
 					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioP"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioF"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioP" value="passT1"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioF" value="failT1"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc" name="mdbEtc"></div></td>
 					</tr>
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง MDP อยู่ในสภาพที่มั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio2" id="metTRadioP2"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio2" id="metTRadioF2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio2" id="metTRadioP2" value="passT2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio2" id="metTRadioF2" value="failT2"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc2" name="mdbEtc2"></div></td>
 					</tr>     			
     				<tr>
 					<td>3</td>
 					<td>ตรวจสอบการติดตั้ง Circuit Breaker อยู่ในสภาพปกติเรียบร้อย</td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio3" id="metTRadioP3"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio3" id="metTRadioF3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio3" id="metTRadioP3" value="passT3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio3" id="metTRadioF3" value="failT3"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc3" name="mdbEtc3"></div></td>
 					</tr> 
     				<tr>
 					<td>4</td>
 					<td>ตรวจสอบการจัดระเบียบสายไฟอยู่ในเกณฑ์ดี</td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio4" id="metTRadioP4"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio4" id="metTRadioF4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio4" id="metTRadioP4" value="passT4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio4" id="metTRadioF4" value="failT4"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc4" name="mdbEtc4"></div></td>
 					</tr> 
     			</tbody>    						
@@ -291,8 +291,8 @@
     		<div class="form-group">			   		
     			<div class="row">	
     			<label class="col-sm-0">ผลการตรวจสอบ</label>
-    			<div class="radio-inline"><label><input type="radio" name="mdbRadio3" id="mdbRadioP">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="mdbRadio3" id="mdbRadioF">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="mdbRadio3" id="mdbRadioP" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="mdbRadio3" id="mdbRadioF" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc5" name="mdbEtc5" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -311,8 +311,8 @@
 		{{csrf_field()}}				
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioN">ไม่มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioN" value="no">ไม่มี</label></div>
         		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="genQty" name="genQty" placeholder="จำนวน"></div>
         	</div> 
         	</div>
@@ -352,29 +352,29 @@
 					<tr>
 					<td>1</td>
 					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio" id="genTRadioP"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio" id="genTRadioF"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio" id="genTRadioP" value="passT1"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio" id="genTRadioF" value="failT1"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="genEtc" name="genEtc"></div></td>
 					</tr>
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง Generator Set อยู่ในสภาพที่มั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio2" id="genTRadioP2"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio2" id="genTRadioF2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio2" id="genTRadioP2" value="passT2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio2" id="genTRadioF2" value="failT2"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="genEtc2" name="genEtc2"></div></td>
 					</tr>
 					<tr>
 					<td>3</td>
 					<td>ตรวจสอบอุปกรณ์ Control Generator อยู่ในสภาพใช้งานได้ปกติ</td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio3" id="genTRadioP3"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio3" id="genTRadioF3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio3" id="genTRadioP3" value="passT3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio3" id="genTRadioF3" value="failT3"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="genEtc3" name="genEtc3"></div></td>
 					</tr>
 					<tr>
 					<td>4</td>
 					<td>ตรวจสอบถังน้ำมันสำรอง อยู่ในสภาพใช้งานได้ปกติ</td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio4" id="genTRadioP4"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="genTRadio4" id="genTRadioF4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio4" id="genTRadioP4" value="passT14"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="genTRadio4" id="genTRadioF4" value="failT4"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="genEtc4" name="genEtc4"></div></td>
 					</tr>     			
     			</tbody>    						
@@ -385,8 +385,8 @@
     		<div class="form-group">			   		
     			<div class="row">
     			<label class="col-sm-0">ผลการตรวจสอบ</label>	
-    			<div class="radio-inline"><label><input type="radio" name="genRadio2" id="genRadioP">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="genRadio2" id="genRadioF">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="genRadio2" id="genRadioP" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="genRadio2" id="genRadioF" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="genEtc5" name="genEtc5" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -405,8 +405,8 @@
 		{{csrf_field()}}				
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioF">ไม่มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioF" value="no">ไม่มี</label></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
@@ -445,29 +445,29 @@
 					<tr>
 					<td>1</td>
 					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio" id="recTRadioP"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio" id="recTRadioF"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio" id="recTRadioP" value="passT1"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio" id="recTRadioF" value="failT1"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="recEtc" name="recEtc"></div></td>
 					</tr>
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง Rack Rectifier อยู่ในสภาพมั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio2" id="recTRadioP2"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio2" id="recTRadioF2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio2" id="recTRadioP2" value="passT2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio2" id="recTRadioF2" value="failT2"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="recEtc2" name="recEtc2"></div></td>
 					</tr>
 					<tr>
 					<td>3</td>
 					<td>ตรวจสอบ Rectifier Module ถูกล็อคและเสียบอยู่ใน slot อย่างมั่นคง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio3" id="recTRadioP3"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio3" id="recTRadioF3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio3" id="recTRadioP3" value="passT3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio3" id="recTRadioF3" value="failT3"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="recEtc3" name="recEtc3"></div></td>
 					</tr>
 					<tr>
 					<td>4</td>
 					<td>ตรวจสอบ Rectifier Display Status ทำงานได้ปกติ</td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio4" id="recTRadioP4"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="recTRadio4" id="recTRadioF4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio4" id="recTRadioP4" value="passT4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="recTRadio4" id="recTRadioF4" value="failT4"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="recEtc4" name="recEtc4"></div></td>
 					</tr>     			
     			</tbody>    						
@@ -478,8 +478,8 @@
     		<div class="form-group">			   		
     			<div class="row">
     			<label class="col-sm-0">ผลการตรวจสอบ</label>	
-    			<div class="radio-inline"><label><input type="radio" name="recRadio2" id="recRadioP">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="recRadio2" id="recRadioF">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="recRadio2" id="recRadioP" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="recRadio2" id="recRadioF" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="recEtc5" name="recEtc5" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -498,8 +498,8 @@
 		{{csrf_field()}}					
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioN">ไม่มี</label></div>        		
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioN" value="no">ไม่มี</label></div>        		
         	</div> 
         	</div>
         	<div class="form-group"> 
@@ -538,36 +538,36 @@
 					<tr>
 					<td>1</td>
 					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioP"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioF"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioP" value="passT1"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioF" value="failT1"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc" name="battEtc"></div></td>
 					</tr>
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง Battery และ  Battery Rack อยู่ในสภาพมั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioP2"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioF2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioP2" value="passT2"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioF2" value="failT2"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc2" name="battEtc2"></div></td>
 					</tr>
 					<tr>
 					<td>3</td>
 					<td>ตรวจสอบสายไฟจุดเชื่อมต่อระหว่าง Battery ถูกไขยึดติดอย่างแน่นหนา</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioP3"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioF3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioP3" value="passT3"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioF3" value="failT3"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc3" name="battEtc3"></div></td>
 					</tr>
 					<tr>
 					<td>4</td>
 					<td>มี Label หรือ Code สีบอกที่ขั้วสายไฟชัดเจน</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioP4"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioF4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioP4" value="passT4"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioF4" value="failT4"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc4" name="battEtc4"></div></td>
 					</tr>
 					<tr>
 					<td>5</td>
 					<td>ตรวจสอบ Case ของแบตเตอรี่อยู่ในสภาพปกติ</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioP5"></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioF5"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioP5" value="passT5"></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioF5" value="failT5"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc5" name="battEtc5"></div></td>
 					</tr>      			
     			</tbody>    						
@@ -578,8 +578,8 @@
     		<div class="form-group">			   		
     			<div class="row">
     			<label class="col-sm-0">ผลการตรวจสอบ visual test และ การวัดค่าจาก Analyst</label>	
-    			<div class="radio-inline"><label><input type="radio" name="battRadio2" id="battRadioP2">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="battRadio2" id="battRadioF2">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="battRadio2" id="battRadioP2" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="battRadio2" id="battRadioF2" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="battEtc6" name="battEtc6" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -670,8 +670,8 @@
 		{{csrf_field()}}					
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioN">ไม่มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioN" value="no">ไม่มี</label></div>
         		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="upsQty" name="upsQty" placeholder="จำนวน"></div>
         	</div> 
         	</div>
@@ -698,8 +698,8 @@
     		<div class="form-group">			   		
     			<div class="row">
     			<label class="col-sm-0">ผลการตรวจสอบ</label>	
-    			<div class="radio-inline"><label><input type="radio" name="upsRadio2" id="upsRadioP">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="upsRadio2" id="upsRadioF">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="upsRadio2" id="upsRadioP" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="upsRadio2" id="upsRadioF" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="upsEtc" name="upsEtc" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -718,8 +718,8 @@
 		{{csrf_field()}}					
     		<div class="form-group">
     			<div class="row">	
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioY">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioN">ไม่มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioY" value="yes">มี</label></div>
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioN" value="no">ไม่มี</label></div>
         		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="invQty" name="invQty" placeholder="จำนวน"></div>
         	</div> 
         	</div>
@@ -746,8 +746,8 @@
     		<div class="form-group">			   		
     			<div class="row">
     			<label class="col-sm-0">ผลการตรวจสอบ</label>	
-    			<div class="radio-inline"><label><input type="radio" name="invRadio2" id="invRadioP">ผ่าน</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="invRadio2" id="invRadioF">ไม่ผ่าน</label></div>
+    			<div class="radio-inline"><label><input type="radio" name="invRadio2" id="invRadioP" value="pass">ผ่าน</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="invRadio2" id="invRadioF" value="fail">ไม่ผ่าน</label></div>
     			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="invEtc" name="invEtc" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
@@ -762,7 +762,7 @@
 	
 	
 	<div class="container" id="imgs" style="display:none">		
-		<h3 class="jumbotron">Image Upload</h3>				
+		<h3 class="jumbotron">Image Upload (ยังไม่เปิดใข้งาน)</h3>				
 			<form method="post" action="{{url('image')}}" enctype="multipart/form-data">
   			{{csrf_field()}}
         	<div class="input-group control-group increment" >
@@ -779,6 +779,7 @@
                 </div>
               </div>
             </div>
+            <input name="id" value="{{$id}}" type="hidden">
 			<button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 			</form>
 			

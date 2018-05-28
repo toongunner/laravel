@@ -37,4 +37,12 @@ class Gen extends Model
         $this->mby = Auth::user()->name;
         $this->save();
     }
+    
+    public function savenonData($data)
+    {
+        $this->locid = $data['locationid'];
+        $this->available = $data['genRadio'];
+        $this->mby = Auth::user()->name;
+        $this->save();
+    }
 }

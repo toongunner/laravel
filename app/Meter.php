@@ -18,10 +18,18 @@ class Meter extends Model
         $this->qty = $data['metQty'];
         $this->code = $data['metCode'];
         $this->serial = $data['metSerial'];
-        $this->condition = $data['metCon'];
+        $this->Objcondition = $data['metCon'];
         $this->size = $data['metSize'];
         $this->result = $data['metRadio2'];
         $this->note = $data['metEtc'];
+        $this->mby = Auth::user()->name;
+        $this->save();
+    }
+    
+    public function savenonData($data)
+    {
+        $this->locid = $data['locationid'];
+        $this->available = $data['metRadio'];
         $this->mby = Auth::user()->name;
         $this->save();
     }

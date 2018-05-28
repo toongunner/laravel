@@ -36,4 +36,12 @@ class Rectifier extends Model
         $this->mby = Auth::user()->name;
         $this->save();
     }
+    
+    public function savenonData($data)
+    {
+        $this->locid = $data['locationid'];
+        $this->available = $data['recRadio'];
+        $this->mby = Auth::user()->name;
+        $this->save();
+    }
 }

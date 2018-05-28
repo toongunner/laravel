@@ -20,6 +20,7 @@ use App\Rectifier;
 use App\Transformer;
 use App\Ups;
 use Illuminate\Http\Request;
+use App\Inverters;
 
 
 class AddDataController extends Controller
@@ -55,6 +56,9 @@ class AddDataController extends Controller
         if($request->has('acbtn'))
         {
             $air = new Air();
+            $checkavailable = $request->input('acRadio');            
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'acRadio'=>'required|in:yes,no',
                 'airQty'=>'required', 
@@ -70,13 +74,23 @@ class AddDataController extends Controller
                 'acuName'=>'required',
                 'acuMod'=>'required',
                 'acuSer'=>'required',
-                'acuYear'=>'required',
+                'acuYear'=>'required|max:4',
                 'acRadio3'=>'required|in:pass,fail',
                 'acuEtc'=>'required',
                 'locationid'=>'required'
             ]);
             $air->saveData($data);
-                
+            }
+            
+           else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                    'acRadio'=>'required|in:yes,no',
+                    'locationid'=>'required'
+                ]);
+                $air->savenonData($data);
+            }
+            
             $locateid = $request->locationid;
             $username = Auth::user()->name;
             DB::table('location')
@@ -88,22 +102,74 @@ class AddDataController extends Controller
         elseif ($request->has('upsbtn'))
         {
             $ups = new Ups();
+            $checkavailable = $request->input('upsRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
-                'invRadio'=>'required|in:yes,no',
-                'invQty'=>'required',
-                'invRoom'=>'required',
-                'invFl'=>'required',
-                'invCode'=>'required',
-                'invBrand'=>'required',
-                'invSno'=>'required',
-                'invMod'=>'required',
-                'invSize'=>'required',
-                'invYear'=>'required',
-                'invRadio2'=>'required|in:pass,fail',
-                'invEtc'=>'required',
+                'upsRadio'=>'required|in:yes,no',
+                'upsQty'=>'required',
+                'upsRoom'=>'required',
+                'upsFl'=>'required',
+                'upsCode'=>'required',
+                'upsBrand'=>'required',
+                'upsSno'=>'required',
+                'upsMod'=>'required',
+                'upsSize'=>'required',
+                'upsYear'=>'required|max:4',
+                'upsRadio2'=>'required|in:pass,fail',
+                'upsEtc'=>'required',
                 'locationid'=>'required'
             ]);
             $ups->saveData($data);
+            }
+            else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                    'upsRadio'=>'required|in:yes,no',
+                    'locationid'=>'required'
+                ]);
+                $ups->savenonData($data);
+            }
+            
+            $locateid = $request->locationid;
+            $username = Auth::user()->name;
+            DB::table('location')
+            ->where('locid',$locateid)
+            ->update(array('mby'=>$username));
+            
+            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+        }
+            elseif ($request->has('invbtn'))
+            {
+                $inv = new Inverters();
+                $checkavailable = $request->input('invRadio');
+                if($checkavailable == "yes")
+                {
+                    $data = $this->validate($request, [
+                        'invRadio'=>'required|in:yes,no',
+                        'invQty'=>'required',
+                        'invRoom'=>'required',
+                        'invFl'=>'required',
+                        'invCode'=>'required',
+                        'invBrand'=>'required',
+                        'invSno'=>'required',
+                        'invMod'=>'required',
+                        'invSize'=>'required',
+                        'invYear'=>'required|max:4',
+                        'invRadio2'=>'required|in:pass,fail',
+                        'invEtc'=>'required',
+                        'locationid'=>'required'
+                    ]);
+                    $inv->saveData($data);
+                }            
+               else if($checkavailable == "no")
+                {
+                    $data = $this->validate($request, [
+                        'invRadio'=>'required|in:yes,no',
+                        'locationid'=>'required'
+                    ]);
+                    $inv->savenonData($data);
+                }
             
             $locateid = $request->locationid;
             $username = Auth::user()->name;
@@ -127,7 +193,7 @@ class AddDataController extends Controller
                 'tranBrand'=>'required',
                 'tranPhrase'=>'required',
                 'tranSize'=>'required',
-                'tranYear'=>'required',
+                'tranYear'=>'required|max:4',
                 'tranTRadio'=>'required|in:passT1,failT1',
                 'tranEtc' => 'nullable',
                 'tranTRadio2'=>'required|in:passT2,failT2',
@@ -158,6 +224,9 @@ class AddDataController extends Controller
         elseif ($request->has('metbtn'))
         {
             $meter = new Meter();
+            $checkavailable = $request->input('metRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'metRadio'=>'required|in:yes,no',
                 'metQty'=>'required',
@@ -166,11 +235,19 @@ class AddDataController extends Controller
                 'metCon'=>'required',
                 'metSize'=>'required',
                 'metRadio2'=>'required|in:pass,fail',
-                'metEtc'=>'required',
+                'metEtc'=>'nullable',
                 'locationid'=>'required'
             ]);
-            $meter->saveData($data);
-            
+                $meter->saveData($data);
+            }
+            else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                'metRadio'=>'required|in:yes,no',
+                'locationid'=>'required'
+            ]);
+                $meter->savenonData($data);
+            }
             $locateid = $request->locationid;
             $username = Auth::user()->name;
             DB::table('location')
@@ -182,6 +259,9 @@ class AddDataController extends Controller
         elseif ($request->has('mdbbtn'))
         {
             $mdb = new Mdb();
+            $checkavailable = $request->input('mdbRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'mdbRadio'=>'required|in:yes,no',
                 'mdbQty'=>'required',
@@ -190,21 +270,34 @@ class AddDataController extends Controller
                 'mdbBrand'=>'required',
                 'mdbPhrase'=>'required',
                 'mdbSize'=>'required',
-                'mdbYear'=>'required',
+                'mdbYear'=>'required|max:4',
                 'mdbMBreaker'=>'required',
                 'mdbFXBreaker'=>'required',
                 'mdbRLoad'=>'required',
                 'mdbSLoad'=>'required',
                 'mdbTLoad'=>'required',
                 'mdbTRadio'=>'required',
+                'mdbEtc'=>'nullable',
                 'mdbTRadio2'=>'required',
-                'metTRadio3'=>'required',
+                'mdbEtc2'=>'nullable',
+                'mdbTRadio3'=>'required',
+                'mdbEtc3'=>'nullable',
                 'mdbTRadio4'=>'required',
+                'mdbEtc4'=>'nullable',
                 'mdbRadio3'=>'required|in:pass,fail',
-                'mdbEtc5'=>'required',
+                'mdbEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
-            $mdb->saveData($data);
+                $mdb->saveData($data);
+            }
+            else if($checkavailable == "no")
+            {
+            $data = $this->validate($request, [
+                'mdbRadio'=>'required|in:yes,no',
+                'locationid'=>'required'
+            ]);
+                $mdb->savenonData($data);
+            }
             
             $locateid = $request->locationid;
             $username = Auth::user()->name;
@@ -217,6 +310,9 @@ class AddDataController extends Controller
         elseif ($request->has('genbtn'))
         {
             $gen = new Gen();
+            $checkavailable = $request->input('genRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'genRadio'=>'required|in:yes,no',
                 'genQty'=>'required',
@@ -229,14 +325,28 @@ class AddDataController extends Controller
                 'genPhrase'=>'required',
                 'genSize'=>'required',
                 'genTRadio'=>'required',
+                'genEtc'=>'nullable',
                 'genTRadio2'=>'required',
+                'genEtc2'=>'nullable',
                 'genTRadio3'=>'required',
+                'genEtc3'=>'nullable',
                 'genTRadio4'=>'required',
+                'genEtc4'=>'nullable',
                 'genRadio2'=>'required|in:pass,fail',
-                'genEtc5'=>'required',
+                'genEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
             $gen->saveData($data);
+            }
+            
+            else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                    'genRadio'=>'required|in:yes,no',                    
+                    'locationid'=>'required'
+                ]);
+                $gen->savenonData($data);
+            }
             
             $locateid = $request->locationid;
             $username = Auth::user()->name;
@@ -249,25 +359,42 @@ class AddDataController extends Controller
         elseif ($request->has('recbtn'))
         {
             $rec = new Rectifier();
+            $checkavailable = $request->input('recRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'recRadio'=>'required|in:yes,no',
                 'recCode'=>'required',
                 'recBrand'=>'required',
                 'recSno'=>'required',
-                'recYear'=>'required',
+                'recYear'=>'required|max:4',
                 'recVolt'=>'required',
                 'recLoad'=>'required',
                 'recMod'=>'required',
                 'recQty'=>'required',
                 'recTRadio'=>'required',
+                'recEtc'=>'nullable',
                 'recTRadio2'=>'required',
+                'recEtc2'=>'nullable',
                 'recTRadio3'=>'required',
+                'recEtc3'=>'nullable',
                 'recTRadio4'=>'required',
+                'recEtc4'=>'nullable',
                 'recRadio2'=>'required|in:pass,fail',
-                'recEtc5'=>'required',
+                'recEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
             $rec->saveData($data);
+            }
+            
+            else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                    'recRadio'=>'required|in:yes,no',
+                    'locationid'=>'required'
+                ]);
+                $rec->savenonData($data);
+            }
             
             $locateid = $request->locationid;
             $username = Auth::user()->name;
@@ -280,6 +407,9 @@ class AddDataController extends Controller
         elseif ($request->has('battbtn'))
         {
             $batt = new Battery();
+            $checkavailable = $request->input('battRadio');
+            if($checkavailable == "yes")
+            {
             $data = $this->validate($request, [
                 'battRadio'=>'required|in:yes,no',
                 'battRoom'=>'required',
@@ -288,18 +418,33 @@ class AddDataController extends Controller
                 'battMod'=>'required',
                 'battSize'=>'required',
                 'battType'=>'required',
-                'battYear'=>'required',
+                'battYear'=>'required|max:4',
                 'battQty'=>'required',
                 'battTRadio'=>'required',
+                'battEtc'=>'nullable',
                 'battTRadio2'=>'required',
+                'battEtc2'=>'nullable',
                 'battTRadio3'=>'required',
+                'battEtc3'=>'nullable',
                 'battTRadio4'=>'required',
+                'battEtc4'=>'nullable',
                 'battTRadio5'=>'required',
+                'battEtc5'=>'nullable',
                 'battRadio2'=>'required|in:pass,fail',
-                'battEtc6'=>'required',
+                'battEtc6'=>'nullable',
                 'locationid'=>'required'
             ]);
             $batt->saveData($data);
+            }
+            
+          else if($checkavailable == "no")
+            {
+                $data = $this->validate($request, [
+                    'battRadio'=>'required|in:yes,no',
+                    'locationid'=>'required'
+                ]);
+                $batt->savenonData($data);
+            }
             
             $locateid = $request->locationid;
             $username = Auth::user()->name;
@@ -322,6 +467,14 @@ class AddDataController extends Controller
             'photo.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);  
         
+        $file = $request->file('photo');
+        foreach ($file as $photos)
+        {
+        $locid = $request->id;
+        $filename = $locid.'_'.$photos->getClientOriginalName();
+        $photos->move(public_path($locid),$filename);
+        }
+        return redirect()->back()->with('success','บันทึกรูปภาพแล้ว !!');
         /* if($request->hasfile('photo'))
         {
             
@@ -338,6 +491,8 @@ class AddDataController extends Controller
             
             return back()->with('success', 'Your images has been successfully'); 
         }*/
+        
+        
     }
   
     public function storePDF(Request $request)
@@ -354,12 +509,18 @@ class AddDataController extends Controller
         {
         $locid = $request->id;
         $file = $request->file('pdffile');
-        $username = Auth::user()->name;
+//         $username = Auth::user()->name;
         $filename = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($locid.'_'.$username.'.'.$filename,file_get_contents($file->getRealPath()));
+        Storage::disk('local')->put($locid.'.'.$filename,file_get_contents($file->getRealPath()));
+        
+        DB::table('location')
+        ->where('locid',$locid)
+        ->update(array('imgpath'=>$locid.'.'.$filename));
+        
         return redirect()->back()->with('success','Save Successful !!');
         }
     }
+    
     
      /**
      * Display the specified resource.

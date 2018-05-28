@@ -19,7 +19,13 @@ class SearchController extends Controller
         if(request()->has('chumsai'))
         {
             $chumsai =  request('chumsai');
-            $location = DB::table('location')->where('name','LIKE',"%".$chumsai."%")->paginate(5);
+            $location = DB::table('location')->where('name','LIKE',"%".$chumsai."%")->paginate(20);
+            return view('search',['location'=>$location]);
+        }
+        else if(request()->has('locate'))
+        {
+            $locid = request('locate');
+            $location = DB::table('location')->where('locid','LIKE',"%".$locid."%")->paginate(1);
             return view('search',['location'=>$location]);
         }
         $location = DB::table('location')->paginate(10); 
@@ -35,7 +41,14 @@ class SearchController extends Controller
     {
        //
     }
-
+    
+    
+    public function showPDF($id)
+    {
+         $path = storage_path('app/'.$id);
+         return response()->file($path);
+//        return response()->file('./storage/app/'.$id);
+    }
     /**
      * Store a newly created resource in storage.
      *

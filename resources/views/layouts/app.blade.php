@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'TRUE') }}</title>
+    <title>กสฐ.</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -28,8 +28,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/welcome') }}">
-                        {{ config('app.name', 'TRUE') }}
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        INDEX
                     </a>
                 </div>
 

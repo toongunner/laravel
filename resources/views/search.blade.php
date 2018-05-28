@@ -4,9 +4,13 @@
 @section('content')
 	
 		<div class="container">
-		<div class="well">ค้นหาจากชื่อชุมสาย
+		<div class="well">
     		<form class="form-inline" action="{{action('SearchController@index')}}" method="get">
-          	<input type="text" class="form-control" id="search" name="chumsai">
+          	<input type="text" class="form-control" id="search" name="chumsai" placeholder="ค้นหาด้วยชื่อชุมสาย">
+          	<button type="submit" class="btn btn-primary">ค้นหา</button>
+        	</form><br/>
+        	<form class="form-inline" action="{{action('SearchController@index')}}" method="get">
+          	<input type="text" class="form-control" id="searchloc" name="locate" placeholder="ค้นหาด้วย location id">
           	<button type="submit" class="btn btn-primary">ค้นหา</button>
         	</form>
          </div>
@@ -39,12 +43,13 @@
                     <td>{{$data->longt}}</td>
                     <td><a href="{{ 'adddata/'.$data->locid.'/edit' }}"><button type="submit" class="btn btn-warning">ADD</button></a></td>
                     <td><button type="submit" class="btn btn-warning" href="">View</button></td>
+					<td><a href="{{ 'pdf/'.$data->imgpath }}" target="_blank">{{$data->imgpath}}</a></td>
                   </tr>
   			@endforeach        
                 </tbody>               
   			</table>
   			{{ $location->links() }}
-		  </div>
+		  </div>		  
           </div>  
           
           

@@ -1,5 +1,14 @@
 $(document).ready(function()
 		{	
+					$("#met").hide();
+					$("#mdb").hide();
+					$("#generator").hide();
+					$("#rectifier").hide()
+					$("#battery").hide();
+					$("#air").hide();
+					$("#ups").hide();
+					$("#imgs").hide();
+					$("#invert").hide();
 			$("#transf").click(function()
 					{
 						$("#transformer").show();

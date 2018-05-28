@@ -31,3 +31,4 @@ Route::resource('/adddata','AddDataController');
 Route::post('/image', 'AddDataController@storeImage');
 
 Route::post('/pdf', 'AddDataController@storePDF');
+Route::get('/pdf/{id}', 'SearchController@showPDF');

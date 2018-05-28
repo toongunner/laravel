@@ -35,4 +35,12 @@ class Air extends Model
         $this->save();
     }
     
+    public function savenonData($data)
+    {
+        $this->locid = $data['locationid'];
+        $this->available = $data['acRadio'];
+        $this->mby = Auth::user()->name;
+        $this->save();
+    }
+    
 }
