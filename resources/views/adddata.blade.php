@@ -762,7 +762,7 @@
 	
 	
 	<div class="container" id="imgs" style="display:none">		
-		<h3 class="jumbotron">Image Upload</h3>				
+		<h3 class="jumbotron">Image Uploaddddd</h3>				
 			<form method="post" action="{{url('image')}}" enctype="multipart/form-data">
   			{{csrf_field()}}
         	<div class="input-group control-group increment" >
