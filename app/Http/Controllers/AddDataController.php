@@ -515,7 +515,7 @@ class AddDataController extends Controller
         
         DB::table('location')
         ->where('locid',$locid)
-        ->update(array('imgpath'=>$locid.'.'.$filename));
+        ->update(array('pdf'=>$locid.'.'.$filename));
         
         return redirect()->back()->with('success','Save Successful !!');
         }
