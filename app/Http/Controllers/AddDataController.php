@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
-use App\Form;
+use Intervention\Image\ImageManagerStatic as Imagesize;
 use App\Air;
 use App\Battery;
 use App\Gen;
@@ -473,6 +470,10 @@ class AddDataController extends Controller
         $locid = $request->id;
         $filename = $locid.'_'.$photos->getClientOriginalName();
         $photos->move(public_path($locid),$filename);
+        $img = Imagesize::make(public_path($locid.'/'.$filename))->resize(320, 240);
+       $img->save(public_path($locid.'/'.$filename));
+        $values = array('locid' => $locid,'imgname' => $filename);
+        DB::table('images')->insert($values);
         }
         return redirect()->back()->with('success','บันทึกรูปภาพแล้ว !!');
         /* if($request->hasfile('photo'))
@@ -530,7 +531,17 @@ class AddDataController extends Controller
      */
     public function show($id)
     {
-        //
+        $air = DB::table('airs')->where('locid',$id);
+        $batt = DB::table('batteries')->where('locid',$id);
+        $gen = DB::table('gens')->where('locid',$id);
+        $image = DB::table('images')->where('locid',$id);
+        $inver = DB::table('inverters')->where('locid',$id);
+        $mdb = DB::table('mdbs')->where('locid',$id);
+        $meter = DB::table('meters')->where('locid',$id);
+        $rectifier = DB::table('retifiers')->where('locid',$id);
+        $transformer = DB::table('transformers')->where('locid',$id);
+        $ups = DB::table('ups')->where('locid',$id);
+      // return $id;
     }
 
     /**

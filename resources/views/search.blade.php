@@ -42,7 +42,7 @@
                     <td>{{$data->lat}}</td>
                     <td>{{$data->longt}}</td>
                     <td><a href="{{ 'adddata/'.$data->locid.'/edit' }}"><button type="submit" class="btn btn-warning">ADD</button></a></td>
-                    <td><button type="submit" class="btn btn-warning" href="">View</button></td>
+                    <td><a href="{{'adddata/'.$data->locid}}"><button type="submit" class="btn btn-warning" >View</button></a></td>					
 					<td><a href="{{ 'pdf/'.$data->pdf }}" target="_blank">{{$data->pdf}}</a></td>
                   </tr>
   			@endforeach        
