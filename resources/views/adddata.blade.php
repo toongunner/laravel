@@ -151,7 +151,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="tranAdd" name="tranbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="tranAdd" name="tranbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>	
@@ -191,7 +191,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="metAdd" name="metbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="metAdd" name="metbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -298,7 +298,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="mdbAdd" name="mdbbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="mdbAdd" name="mdbbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -392,7 +392,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="genAdd" name="genbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="genAdd" name="genbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -486,7 +486,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="recAdd" name="recbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="recAdd" name="recbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -587,7 +587,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="battAdd" name="battbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="battAdd" name="battbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -659,7 +659,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="acuAdd" name="acbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="acuAdd" name="acbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -707,7 +707,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="upsAdd" name="upsbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="upsAdd" name="upsbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
@@ -755,7 +755,7 @@
     		</div>	
     		<div class="form-group">			   		
     			<div class="row">
-    			<button type="submit" class="btn btn-outline-success" id="invAdd" name="invbtn">ADD</button>
+    			<button type="submit" class="btn btn-outline-success" id="invAdd" name="invbtn">ยืนยัน</button>
     			</div>
     		</div>			
 		</form>			
