@@ -82,7 +82,7 @@
 		
 
 
-<div class="container" id="addbody">
+<div class="container" id="addbody" style="position:absolute;top:25%;left:15%;">
 	
 	<div class="container" id="transformer">		
 		<div class="form-group col-sm-4"><label for="header"><b>การตรวจสอบข้อมูล Transformer</b></label></div>
