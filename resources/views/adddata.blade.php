@@ -5,38 +5,37 @@
 <script type="text/javascript" src="{!! asset('js/adddata.js') !!}"></script>
 <link rel="stylesheet" href="{{ asset('css/adddata.css') }}">
 
-
 @section('content')
 <div class="container">
    <strong><ul class="nav nav-tabs nav-justified" >
-    	<li class="nav-item" id="transf">
+    	<li class="nav-item" id="transf" tabindex="1">
     	<a class="nav-link active">Transformer</a>
     	</li>
-    	<li class="nav-item" id="meter">
+    	<li class="nav-item" id="meter" tabindex="2">
     	<a class="nav-link">Meter</a>
     	</li>
-    	<li class="nav-item" id="mdp">
+    	<li class="nav-item" id="mdp" tabindex="3">
     	<a class="nav-link">MDB</a>
     	</li>
-    	<li class="nav-item" id="gen">
+    	<li class="nav-item" id="gen" tabindex="4">
     	<a class="nav-link">Generetor Set</a>
     	</li>
-    	<li class="nav-item" id="rec">
+    	<li class="nav-item" id="rec" tabindex="5">
     	<a class="nav-link">Rectifier</a>
     	</li>
-    	<li class="nav-item" id="batt">
+    	<li class="nav-item" id="batt" tabindex="6">
     	<a class="nav-link">Battery</a>
     	</li>
-    	<li class="nav-item" id="ac">
+    	<li class="nav-item" id="ac" tabindex="7">
     	<a class="nav-link">Air Con.</a>
     	</li>
-    	<li class="nav-item" id="up">
+    	<li class="nav-item" id="up" tabindex="8">
     	<a class="nav-link">UPS</a>
     	</li>
-    	<li class="nav-item" id="inv">
+    	<li class="nav-item" id="inv" tabindex="9">
     	<a class="nav-link">Inverter</a>
     	</li>
-    	<li class="nav-item" id="img">
+    	<li class="nav-item" id="img" tabindex="10">
     	<a class="nav-link">Images/PDF</a>
     	</li>
     </ul></strong>
@@ -93,9 +92,9 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="tranRadio" id="tranRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="tranRadio" id="tranRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="tranQty" name="{{old('tranQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="tranQty" name="{{old('tranQty')}}" placeholder="จำนวน (Unit)"></div>
         		</div> 
-        	</div>
+        	</div>        	
         	<div class="form-group">			   		
     			<div class="row">
     			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="tranCode" name="{{old('tranCode')}}" placeholder="รหัสสินทรัพย์"></div>	
@@ -155,7 +154,7 @@
     			<button type="submit" class="btn btn-outline-success" id="tranAdd" name="tranbtn">ADD</button>
     			</div>
     		</div>			
-		</form>			
+		</form>	
 	</div>
 	
 	<div class="container" id="met" style="display:none">		
@@ -166,7 +165,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="metRadio" id="metRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="metRadio" id="metRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="metQty" name="{{old('metQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="metQty" name="{{old('metQty')}}" placeholder="จำนวน (Unit)"></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
@@ -206,7 +205,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="mdbRadio" id="mdbRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbQty" name="{{old('mdbQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbQty" name="{{old('mdbQty')}}" placeholder="จำนวน (Unit)"></div>
         	</div> 
         	</div>
         	<div class="form-group">
@@ -257,7 +256,7 @@
     			<tbody>
 					<tr>
 					<td>1</td>
-					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
+					<td>ตรวจสอบสภาพของอุปกรณ์อยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
 					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioP" value="passT1"></label></div></td>
 					<td><div class="radio-inline"><label><input type="radio" name="mdbTRadio" id="metTRadioF" value="failT1"></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" class="form-control" id="mdbEtc" name="{{old('mdbEtc')}}"></div></td>
@@ -313,7 +312,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="genRadio" id="genRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="genQty" name="{{old('genQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="genQty" name="{{old('genQty')}}" placeholder="จำนวน(Set)"></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
@@ -407,6 +406,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="recRadio" id="recRadioF" value="no">ไม่มี</label></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="recQty" name="{{old('recQty')}}" placeholder="จำนวน(Set)"></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
@@ -499,7 +499,8 @@
     		<div class="form-group">
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioY" value="yes">มี</label></div>
-        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioN" value="no">ไม่มี</label></div>        		
+        		<div class="radio-inline col-sm-1"><label><input type="radio" name="battRadio" id="battRadioN" value="no">ไม่มี</label></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="battQty" name="{{old('battQty')}}" placeholder="จำนวน(กอง)"></div>      		
         	</div> 
         	</div>
         	<div class="form-group"> 
@@ -600,7 +601,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="acRadio" id="acRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="acRadio" id="acRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="airQty" name="airQty" placeholder="จำนวน" value="{{ old('airQty') }}"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="airQty" name="airQty" placeholder="จำนวน(Unit)" value="{{ old('airQty') }}"></div>
         	</div> 
         	</div>
         	<div class="form-group"> 
@@ -672,7 +673,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="upsRadio" id="upsRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="upsQty" name="{{old('upsQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="upsQty" name="{{old('upsQty')}}" placeholder="จำนวน(Unit)"></div>
         	</div> 
         	</div>
         	<div class="form-group"> 
@@ -720,7 +721,7 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="invRadio" id="invRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="invQty" name="{{old('invQty')}}" placeholder="จำนวน"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="invQty" name="{{old('invQty')}}" placeholder="จำนวน(Unit)"></div>
         	</div> 
         	</div>
         	<div class="form-group"> 
@@ -768,14 +769,14 @@
         	<div class="input-group control-group increment" >
           			<input type="file" name="photo[]" class="form-control">
                   	<div class="input-group-btn"> 
-                    	<button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                    	<button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i></button>
                   	</div>
         	</div>
         	<div class="clone hide">
               <div class="control-group input-group" style="margin-top:10px">
                 <input type="file" name="photo[]" class="form-control">
                 <div class="input-group-btn"> 
-                  <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                  <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-minus"></i></button>
                 </div>
               </div>
             </div>
@@ -783,17 +784,17 @@
 			<button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 			</form>
 			
-		<h3 class="jumbotron">PDF Upload</h3>
+			
+			<h3 class="jumbotron">PDF Upload</h3>
 			<form method="post" action="{{url('pdf')}}" enctype="multipart/form-data">
     		{{csrf_field()}}
-        	<div class="input-group control-group increment" >
+        	<div class="input-group control-group" >
           			<input type="file" name="pdffile" class="form-control">
           			<input name="id" value="{{$id}}" type="hidden">
         	</div>
           	<button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 			</form> 		
-		<img src="{{asset('/'.$id.'/filename')}}"></img>      					
-	</div>
+	</div>	    					
 </div>
 
 @if($errors->any() || \Session::has('success'))
@@ -816,6 +817,8 @@ $(function() {
       $("body").on("click",".btn-danger",function(){ 
           $(this).parents(".control-group").remove();
       });
+
+
 
     });
 

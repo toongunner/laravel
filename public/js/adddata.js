@@ -149,6 +149,5 @@ $(document).ready(function()
 						$("#invert").hide();
 					}
 			);
-			
 		}
 );

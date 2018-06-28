@@ -5,6 +5,7 @@
    	left:15%;
 }
 
+
 #backtosearch
 {
 	float: right;
@@ -15,77 +16,166 @@
   	background-color: #eeffe6;
   	border-style: groove;
   	border-width: 1px;
-  	border-color:004d00;
+
 }
+#transformer
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #meter
 {
 	background-color: #dcffcc;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#met
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;	
+}
+
 
 #mdp
 {
 	background-color: #cbffb3;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#mdb
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #gen
 {
 	background-color: #b9ff99;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#generator
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #rec
 {
 	background-color: #a8ff80;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#rectifier
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #batt
 {
 	background-color: #b9ff99;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#battery
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #ac
 {
 	background-color: #cbffb3;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#air
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #up
 {
 	background-color: #dcffcc;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#ups
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #inv
 {
 	background-color: #eeffe6;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
 }
+#invert
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
+}
+
 
 #img
 {
 	background-color: #e6ffe6;
 	border-style: groove;
   	border-width: 1px;
-  	border-color:
+
+}
+#imgs
+{
+	background-color: #dfffdf;
+	padding:38;
+	position:absolute;
+	right:43px;
+	border-bottom-right-radius: 25px;
 }

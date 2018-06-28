@@ -361,6 +361,7 @@ class AddDataController extends Controller
             {
             $data = $this->validate($request, [
                 'recRadio'=>'required|in:yes,no',
+                'recQty'=>'required',
                 'recCode'=>'required',
                 'recBrand'=>'required',
                 'recSno'=>'required',
@@ -450,11 +451,7 @@ class AddDataController extends Controller
             ->update(array('mby'=>$username));
             
             return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
-        }
-        elseif ($request->has('invbtn'))
-        {
-            return "Inverter";
-        }
+        }        
     }
       
     public function storeImage(Request $request)
@@ -471,7 +468,7 @@ class AddDataController extends Controller
         $filename = $locid.'_'.$photos->getClientOriginalName();
         $photos->move(public_path($locid),$filename);
         $img = Imagesize::make(public_path($locid.'/'.$filename))->resize(320, 240);
-       $img->save(public_path($locid.'/'.$filename));
+        $img->save(public_path($locid.'/'.$filename));
         $values = array('locid' => $locid,'imgname' => $filename);
         DB::table('images')->insert($values);
         }
@@ -541,7 +538,7 @@ class AddDataController extends Controller
         $rectifier = DB::table('retifiers')->where('locid',$id);
         $transformer = DB::table('transformers')->where('locid',$id);
         $ups = DB::table('ups')->where('locid',$id);
-      // return $id;
+        return view('editdata',compact('air','batt','gen','image','inver','mdb','meter','rectifier','transformer','ups'));
     }
 
     /**
