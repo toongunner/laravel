@@ -211,7 +211,7 @@
         	<div class="form-group">
     			<div class="row">	
         		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbLP" value="LP">Load Center Panel (LP)</label></div>
-        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbMDP" value="MDP">Main Distribution Panel (MDB)</label></div>
+        		<div class="radio-inline"><label><input type="radio" name="mdbRadio2" id="mdbMDP" value="MDP">Main Distribution Panel (MDP)</label></div>
         	</div> 
         	</div>
         	<div class="form-group">			   		
