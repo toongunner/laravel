@@ -262,7 +262,7 @@ class AddDataController extends Controller
             $data = $this->validate($request, [
                 'mdbRadio'=>'required|in:yes,no',
                 'mdbQty'=>'nullable',
-                'mdbRadio2'=>'required|in:LP,MDB',
+                'mdbRadio2'=>'required|in:LP,MDP',
                 'mdbCode'=>'nullable',
                 'mdbBrand'=>'nullable',
                 'mdbPhrase'=>'nullable',
