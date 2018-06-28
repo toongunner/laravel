@@ -601,13 +601,13 @@
     			<div class="row">	
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="acRadio" id="acRadioY" value="yes">มี</label></div>
         		<div class="radio-inline col-sm-1"><label><input type="radio" name="acRadio" id="acRadioN" value="no">ไม่มี</label></div>
-        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="airQty" name="airQty" placeholder="จำนวน(Unit)" value="airQty"></div>
+        		<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="airQty" name="airQty" placeholder="จำนวน(Unit)"></div>
         	</div> 
         	</div>
         	<div class="form-group"> 
     			<div class="row">	
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acRoom" name="acRoom" placeholder="ห้อง" value="acRoom"></div>	
-    			<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="acFl" name="acFl" placeholder="ชั้น" value="acFl"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acRoom" name="acRoom" placeholder="ห้อง"></div>	
+    			<div class="col-sm-1"><input class="form-control form-control-sm" type="text" class="form-control" id="acFl" name="acFl" placeholder="ชั้น"></div>
     			</div>
     		</div>
     		<div class="form-group">
@@ -620,32 +620,32 @@
         	</div>
         	<div class="form-group">			   		
     			<div class="row">
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acCode" name="acCode" placeholder="รหัสสินทรัพย์" value="acCode"></div>
-    			<div class="col-sm-3"><input class="form-control form-control-sm" type="text" class="form-control" id="acSup" name="acSup" placeholder="Power Supply(V-Ph-Hz)" value="acSup"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acCode" name="acCode" placeholder="รหัสสินทรัพย์"></div>
+    			<div class="col-sm-3"><input class="form-control form-control-sm" type="text" class="form-control" id="acSup" name="acSup" placeholder="Power Supply(V-Ph-Hz)"></div>
     			</div>
     		</div>
     		<div class="form-group">			   		
     			<div class="row">	
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuName" name="fcuName" placeholder="FCU Brand Name" value="fcuName"></div>    			
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuMod" name="fcuMod" placeholder="Model" value="fcuMod"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuName" name="fcuName" placeholder="FCU Brand Name"></div>    			
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuMod" name="fcuMod" placeholder="Model"></div>
     			</div>
     		</div>
     		<div class="form-group">			   		
     			<div class="row">
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuSer" name="fcuSer" placeholder="Serial No" value="fcuSer"></div>
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuSize" name="fcuSize" placeholder="ขนาด (BTU/Watt/Hp)" value="fcuSize"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuSer" name="fcuSer" placeholder="Serial No"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="fcuSize" name="fcuSize" placeholder="ขนาด (BTU/Watt/Hp)"></div>
     			</div>
     		</div>
     		<div class="form-group">			   		
     			<div class="row">	
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuName" name="acuName" placeholder="ACU Brand Name" value="acuName"></div>    			
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuMod" name="acuMod" placeholder="Model" value="acuMod"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuName" name="acuName" placeholder="ACU Brand Name"></div>    			
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuMod" name="acuMod" placeholder="Model"></div>
     			</div>
     		</div>
     		<div class="form-group">
     			<div class="row">	
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuSer" name="acuSer" placeholder="Serial No" value="acuSer"></div>	
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuYear" name="acuYear" placeholder="ปีที่ติดตั้ง" value="acuYear"></div>
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuSer" name="acuSer" placeholder="Serial No"></div>	
+    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text" class="form-control" id="acuYear" name="acuYear" placeholder="ปีที่ติดตั้ง"></div>
     			</div>
     		</div>
     		<div class="form-group">			   		
@@ -653,7 +653,7 @@
     			<label class="col-sm-0">ผลการตรวจสอบ</label>	
     			<div class="radio-inline"><label><input type="radio" name="acRadio3" id="acuRadioP" value="pass">ผ่าน</label></div>
         		<div class="radio-inline"><label><input type="radio" name="acRadio3" id="acuRadioP" value="fail">ไม่ผ่าน</label></div>
-    			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="acuEtc" name="acuEtc" placeholder="หมายเหตุ" value="acuEtc"></div>    			
+    			<div class="col-sm-4"><input class="form-control form-control-sm" type="text" class="form-control" id="acuEtc" name="acuEtc" placeholder="หมายเหตุ"></div>    			
     			<input name="locationid" value="{{$id}}" type="hidden">
     			</div>
     		</div>	
