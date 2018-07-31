@@ -17,8 +17,6 @@ class CreateMetersTable extends Migration
             $table->increments('id');
             $table->string('locid');
             $table->string('available');
-            $table->string('qty');
-            $table->string('code')->nullable();
             $table->string('serial');
             $table->string('condition');
             $table->string('size');

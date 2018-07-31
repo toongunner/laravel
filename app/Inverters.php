@@ -9,13 +9,12 @@ class Inverters extends Model
 {
     protected $table = 'inverters';
     
-    protected $fillable = ['invRadio', 'invQty', 'invRoom','invFl', 'invCode', 'invBrand','invSno', 'invMod', 'invSize','invYear','invRadio2','invEtc'];
+    protected $fillable = ['invRadio', 'invRoom','invFl', 'invCode', 'invBrand','invSno', 'invMod', 'invSize','invYear','invRadio2','invEtc'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['invRadio'];
-        $this->qty = $data['invQty'];
         $this->room = $data['invRoom'];
         $this->floor = $data['invFl'];
         $this->code = $data['invCode'];

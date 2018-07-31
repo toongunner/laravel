@@ -12,7 +12,7 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
+    
     'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
@@ -50,7 +50,7 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'strict' => true,
+            'strict' => false,
             'engine' => null,
         ],
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Imagesize;
@@ -54,13 +55,14 @@ class AddDataController extends Controller
         {
             $air = new Air();
             $checkavailable = $request->input('acRadio');            
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'acRadio'=>'required|in:yes,no',
+                'acRadio'=>'required|in:มี,ไม่มี',
                 'airQty'=>'nullable', 
                 'acRoom'=>'nullable',
                 'acFl'=>'nullable',
+                'acTmp'=>'nullable',
                 'acRadio2'=>'required|in:split,freeblow,precision',
                 'acCode'=>'nullable',
                 'acSup'=>'nullable',
@@ -72,17 +74,17 @@ class AddDataController extends Controller
                 'acuMod'=>'nullable',
                 'acuSer'=>'nullable',
                 'acuYear'=>'nullable',
-                'acRadio3'=>'required|in:pass,fail',
+                'acRadio3'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'acuEtc'=>'nullable',
                 'locationid'=>'required'
             ]);
             $air->saveData($data);
             }
             
-           else if($checkavailable == "no")
+           else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'acRadio'=>'required|in:yes,no',
+                    'acRadio'=>'required|in:มี,ไม่มี',
                     'locationid'=>'required'
                 ]);
                 $air->savenonData($data);
@@ -94,16 +96,16 @@ class AddDataController extends Controller
                 ->where('locid',$locateid)
                 ->update(array('mby'=>$username));
             
-                return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+                return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('upsbtn'))
         {
             $ups = new Ups();
             $checkavailable = $request->input('upsRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'upsRadio'=>'required|in:yes,no',
+                'upsRadio'=>'required|in:มี,ไม่มี',
                 'upsQty'=>'nullable',
                 'upsRoom'=>'nullable',
                 'upsFl'=>'nullable',
@@ -113,16 +115,16 @@ class AddDataController extends Controller
                 'upsMod'=>'nullable',
                 'upsSize'=>'nullable',
                 'upsYear'=>'max:4',
-                'upsRadio2'=>'required|in:pass,fail',
+                'upsRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'upsEtc'=>'nullable',
                 'locationid'=>'required'
             ]);
             $ups->saveData($data);
             }
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'upsRadio'=>'required|in:yes,no',
+                    'upsRadio'=>'required|in:มี,ไม่มี',
                     'locationid'=>'required'
                 ]);
                 $ups->savenonData($data);
@@ -134,17 +136,16 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
             elseif ($request->has('invbtn'))
             {
                 $inv = new Inverters();
                 $checkavailable = $request->input('invRadio');
-                if($checkavailable == "yes")
+                if($checkavailable == "มี")
                 {
                     $data = $this->validate($request, [
-                        'invRadio'=>'required|in:yes,no',
-                        'invQty'=>'nullable',
+                        'invRadio'=>'required|in:มี,ไม่มี',
                         'invRoom'=>'nullable',
                         'invFl'=>'nullable',
                         'invCode'=>'nullable',
@@ -153,13 +154,13 @@ class AddDataController extends Controller
                         'invMod'=>'nullable',
                         'invSize'=>'nullable',
                         'invYear'=>'max:4',
-                        'invRadio2'=>'required|in:pass,fail',
+                        'invRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                         'invEtc'=>'nullable',
                         'locationid'=>'required'
                     ]);
                     $inv->saveData($data);
                 }            
-               else if($checkavailable == "no")
+               else if($checkavailable == "ไม่มี")
                 {
                     $data = $this->validate($request, [
                         'invRadio'=>'required|in:yes,no',
@@ -174,19 +175,17 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('tranbtn'))
         {
             $transf = new Transformer();
             $checkavailable = $request->input('tranRadio');
             
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'tranRadio'=>'required|in:yes,no',
-                'tranQty'=>'nullable',
-                'tranCode'=>'nullable',
+                'tranRadio'=>'required|in:มี,ไม่มี',
                 'tranBrand'=>'nullable',
                 'tranPhrase'=>'nullable',
                 'tranSize'=>'nullable',
@@ -195,16 +194,16 @@ class AddDataController extends Controller
                 'tranEtc' => 'nullable',
                 'tranTRadio2'=>'required|in:passT2,failT2',
                 'tranEtc2' => 'nullable',
-                'tranRadio2'=>'required|in:pass,fail',
+                'tranRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'tranEtc3' => 'nullable',
                 'locationid'=>'required'
             ]);            
                     $transf->saveData($data);
             }
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'tranRadio'=>'required|in:yes,no',
+                    'tranRadio'=>'required|in:มี,ไม่มี',
                     'locationid'=>'required'
             ]);
                     $transf->savenonData($data);
@@ -216,31 +215,31 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('metbtn'))
         {
             $meter = new Meter();
             $checkavailable = $request->input('metRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'metRadio'=>'required|in:yes,no',
+                'metRadio'=>'required|in:มี,ไม่มี',
                 'metQty'=>'nullable',
                 'metCode'=>'nullable',
                 'metSerial'=>'nullable',
                 'metCon'=>'nullable',
                 'metSize'=>'nullable',
-                'metRadio2'=>'required|in:pass,fail',
+                'metRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'metEtc'=>'nullable',
                 'locationid'=>'required'
             ]);
                 $meter->saveData($data);
             }
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                'metRadio'=>'required|in:yes,no',
+                'metRadio'=>'required|in:มี,ไม่มี',
                 'locationid'=>'required'
             ]);
                 $meter->savenonData($data);
@@ -251,22 +250,19 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('mdbbtn'))
         {
             $mdb = new Mdb();
             $checkavailable = $request->input('mdbRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'mdbRadio'=>'required|in:yes,no',
-                'mdbQty'=>'nullable',
+                'mdbRadio'=>'required|in:มี,ไม่มี',
                 'mdbRadio2'=>'required|in:LP,MDP',
-                'mdbCode'=>'nullable',
                 'mdbBrand'=>'nullable',
                 'mdbPhrase'=>'nullable',
-                'mdbSize'=>'nullable',
                 'mdbYear'=>'nullable',
                 'mdbMBreaker'=>'nullable',
                 'mdbFXBreaker'=>'nullable',
@@ -281,16 +277,16 @@ class AddDataController extends Controller
                 'mdbEtc3'=>'nullable',
                 'mdbTRadio4'=>'required',
                 'mdbEtc4'=>'nullable',
-                'mdbRadio3'=>'required|in:pass,fail',
+                'mdbRadio3'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'mdbEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
                 $mdb->saveData($data);
             }
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
             $data = $this->validate($request, [
-                'mdbRadio'=>'required|in:yes,no',
+                'mdbRadio'=>'required|in:มี,ไม่มี',
                 'locationid'=>'required'
             ]);
                 $mdb->savenonData($data);
@@ -302,17 +298,16 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('genbtn'))
         {
             $gen = new Gen();
             $checkavailable = $request->input('genRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'genRadio'=>'required|in:yes,no',
-                'genQty'=>'nullable',
+                'genRadio'=>'required|in:มี,ไม่มี',
                 'genCode'=>'nullable',
                 'EnBrand'=>'nullable',
                 'EnSno'=>'nullable',
@@ -320,7 +315,6 @@ class AddDataController extends Controller
                 'genBrand'=>'nullable',
                 'genSno'=>'nullable',
                 'genPhrase'=>'nullable',
-                'genSize'=>'nullable',
                 'genTRadio'=>'required',
                 'genEtc'=>'nullable',
                 'genTRadio2'=>'required',
@@ -329,17 +323,17 @@ class AddDataController extends Controller
                 'genEtc3'=>'nullable',
                 'genTRadio4'=>'required',
                 'genEtc4'=>'nullable',
-                'genRadio2'=>'required|in:pass,fail',
+                'genRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'genEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
             $gen->saveData($data);
             }
             
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'genRadio'=>'required|in:yes,no',                    
+                    'genRadio'=>'required|in:มี,ไม่มี',                    
                     'locationid'=>'required'
                 ]);
                 $gen->savenonData($data);
@@ -351,16 +345,16 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('recbtn'))
         {
             $rec = new Rectifier();
             $checkavailable = $request->input('recRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'recRadio'=>'required|in:yes,no',
+                'recRadio'=>'required|in:มี,ไม่มี',
                 'recQty'=>'nullable',
                 'recCode'=>'nullable',
                 'recBrand'=>'nullable',
@@ -378,17 +372,17 @@ class AddDataController extends Controller
                 'recEtc3'=>'nullable',
                 'recTRadio4'=>'required',
                 'recEtc4'=>'nullable',
-                'recRadio2'=>'required|in:pass,fail',
+                'recRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'recEtc5'=>'nullable',
                 'locationid'=>'required'
             ]);
             $rec->saveData($data);
             }
             
-            else if($checkavailable == "no")
+            else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'recRadio'=>'required|in:yes,no',
+                    'recRadio'=>'required|in:มี,ไม่มี',
                     'locationid'=>'required'
                 ]);
                 $rec->savenonData($data);
@@ -400,24 +394,24 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }
         elseif ($request->has('battbtn'))
         {
             $batt = new Battery();
             $checkavailable = $request->input('battRadio');
-            if($checkavailable == "yes")
+            if($checkavailable == "มี")
             {
             $data = $this->validate($request, [
-                'battRadio'=>'required|in:yes,no',
+                'battRadio'=>'required|in:มี,ไม่มี',
                 'battRoom'=>'nullable',
                 'battFl'=>'nullable',
                 'battBrand'=>'nullable',
                 'battMod'=>'nullable',
                 'battSize'=>'nullable',
-                'battType'=>'nullable',
                 'battYear'=>'nullable',
                 'battQty'=>'nullable',
+                'battCellQty'=>'nullable',
                 'battTRadio'=>'nullable',
                 'battEtc'=>'nullable',
                 'battTRadio2'=>'required',
@@ -428,17 +422,17 @@ class AddDataController extends Controller
                 'battEtc4'=>'nullable',
                 'battTRadio5'=>'required',
                 'battEtc5'=>'nullable',
-                'battRadio2'=>'required|in:pass,fail',
+                'battRadio2'=>'required|in:ผ่าน,ไม่ผ่าน',
                 'battEtc6'=>'nullable',
                 'locationid'=>'required'
             ]);
             $batt->saveData($data);
             }
             
-          else if($checkavailable == "no")
+          else if($checkavailable == "ไม่มี")
             {
                 $data = $this->validate($request, [
-                    'battRadio'=>'required|in:yes,no',
+                    'battRadio'=>'required|in:มี,ไม่มี',
                     'locationid'=>'required'
                 ]);
                 $batt->savenonData($data);
@@ -450,7 +444,7 @@ class AddDataController extends Controller
             ->where('locid',$locateid)
             ->update(array('mby'=>$username));
             
-            return redirect()->back()->with('success','Save Successful !!')->withInput(Input::all());
+            return redirect()->back()->with('success','บันทึกข้อมูลสำเร็จ !!');
         }        
     }
       
@@ -472,27 +466,21 @@ class AddDataController extends Controller
         $values = array('locid' => $locid,'imgname' => $filename);
         DB::table('images')->insert($values);
         }
-        return redirect()->back()->with('success','บันทึกรูปภาพแล้ว !!');
-        /* if($request->hasfile('photo'))
-        {
-            
-            foreach($request->file('photo') as $image)
-            {
-                $name=$image->getClientOriginalName();
-                $image->move(public_path().'/images/', $name);
-                $photoname[] = $name;
-            }
-            
-            $form= new Form();
-            $form->photo=json_encode($photoname);
-            $form->save();
-            
-            return back()->with('success', 'Your images has been successfully'); 
-        }*/
-        
-        
+        return redirect()->back()->with('success','บันทึกรูปภาพแล้ว !!');      
     }
-  
+    public function deleteImage(Request $request)
+    {
+        $imgname = $request->get('imgname');
+        $locid = $request->get('locid');
+        $imgpath = public_path($locid.'/'.$imgname);        
+        if(File::exists($imgpath)) {
+            File::delete($imgpath);
+           /*  DB::table('images')->delete(); */
+        }
+        return redirect()->back()->with('success','ลบรูปภาพแล้ว !!'); 
+    }
+    
+    
     public function storePDF(Request $request)
     {
         /*      this is for images
@@ -515,7 +503,7 @@ class AddDataController extends Controller
         ->where('locid',$locid)
         ->update(array('pdf'=>$locid.'.'.$filename));
         
-        return redirect()->back()->with('success','Save Successful !!');
+        return redirect()->back()->with('success','อัพโหลดไฟล์สำเร็จ !!');
         }
     }
     
@@ -528,17 +516,18 @@ class AddDataController extends Controller
      */
     public function show($id)
     {
-        $air = DB::table('airs')->where('locid',$id);
-        $batt = DB::table('batteries')->where('locid',$id);
-        $gen = DB::table('gens')->where('locid',$id);
-        $image = DB::table('images')->where('locid',$id);
-        $inver = DB::table('inverters')->where('locid',$id);
-        $mdb = DB::table('mdbs')->where('locid',$id);
-        $meter = DB::table('meters')->where('locid',$id);
-        $rectifier = DB::table('retifiers')->where('locid',$id);
-        $transformer = DB::table('transformers')->where('locid',$id);
-        $ups = DB::table('ups')->where('locid',$id);
-        return view('editdata',compact('air','batt','gen','image','inver','mdb','meter','rectifier','transformer','ups'));
+        $air = DB::table('airstest')->where('locid',$id)->orderBy('id')->get();
+        $batt = DB::table('batteries')->where('locid',$id)->orderBy('id')->get();
+        $gen = DB::table('gens')->where('locid',$id)->orderBy('id')->get();
+        $image = DB::table('images')->where('locid',$id)->orderBy('id')->get();
+        $inver = DB::table('inverters')->where('locid',$id)->orderBy('id')->get();
+        $mdb = DB::table('mdbtest')->where('locid',$id)->orderBy('id')->get();
+        $meter = DB::table('meters')->where('locid',$id)->orderBy('id')->get();
+        $rectifier = DB::table('rectifytest')->where('locid',$id)->orderBy('id')->get();
+        $transformer = DB::table('transformers')->where('locid',$id)->orderBy('id')->get();
+        $ups = DB::table('ups')->where('locid',$id)->orderBy('id')->get();
+        $chumsai = DB::table('location')->where('locid',$id)->value('name');
+        return view('editdata',compact('air','meter','chumsai','transformer','mdb','gen','rectifier','batt','ups','inver','image','id'));
     }
 
     /**

@@ -9,15 +9,15 @@ class Air extends Model
 {
     protected $table = 'airs';
     
-    protected $fillable = ['acRadio','airQty','acRoom','acFl','acRadio2','acCode','acSup','acTmp','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acuYear','acRadio3','acuEtc'];
+    protected $fillable = ['acRadio','acRoom','acFl','acTmp','acRadio2','acCode','acSup','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acuYear','acRadio3','acuEtc'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['acRadio'];
-        $this->qty = $data['airQty'];
         $this->room = $data['acRoom'];
         $this->floor = $data['acFl'];
+        $this->temp = $data['acTmp'];
         $this->type = $data['acRadio2'];
         $this->code = $data['acCode'];
         $this->powersup = $data['acSup'];

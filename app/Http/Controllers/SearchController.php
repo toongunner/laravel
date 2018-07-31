@@ -25,7 +25,7 @@ class SearchController extends Controller
         else if(request()->has('locate'))
         {
             $locid = request('locate');
-            $location = DB::table('location')->where('locid','LIKE',"%".$locid."%")->paginate(1);
+            $location = DB::table('location')->where('locid','LIKE',"%".$locid."%")->paginate(40);
             return view('search',['location'=>$location]);
         }
         $location = DB::table('location')->paginate(10); 

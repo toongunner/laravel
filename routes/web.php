@@ -29,6 +29,20 @@ Route::resource('/adddata','AddDataController');
 
 
 Route::post('/image', 'AddDataController@storeImage');
+Route::post('/imgdel','AddDataController@deleteImage');
 
 Route::post('/pdf', 'AddDataController@storePDF');
 Route::get('/pdf/{id}', 'SearchController@showPDF');
+
+Route::resource('/update','UpdateController');
+
+Route::get('/report', 'ReportExcelController@index');
+Route::get('/report/battery','ReportExcelController@battIndex');
+Route::get('/report/air','ReportExcelController@airIndex');
+Route::get('/report/mdb','ReportExcelController@mdbIndex');
+Route::get('/report/meter','ReportExcelController@meterIndex');
+Route::get('/report/rectifier','ReportExcelController@rectifyIndex');
+Route::get('/report/transformer','ReportExcelController@transformerIndex');
+Route::get('/report/gen','ReportExcelController@genIndex');
+Route::get('/report/ups','ReportExcelController@upsIndex');
+Route::get('/report/inverter','ReportExcelController@inverterIndex');

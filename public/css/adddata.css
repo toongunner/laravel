@@ -1,8 +1,13 @@
+#table
+{
+	font-style: normal;
+}
+
 #addbody
 {
-	position:absolute;
-    top:25%;
-   	left:15%;
+
+	font-family: Arial, Helvetica, sans-serif;
+	
 }
 
 
@@ -23,7 +28,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -40,7 +44,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;	
 }
 
@@ -57,7 +60,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -74,7 +76,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -91,7 +92,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -108,7 +108,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -125,7 +124,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -142,7 +140,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -159,7 +156,6 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }
 
@@ -176,6 +172,5 @@
 	background-color: #dfffdf;
 	padding:38;
 	position:absolute;
-	right:43px;
 	border-bottom-right-radius: 25px;
 }

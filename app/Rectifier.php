@@ -9,13 +9,12 @@ class Rectifier extends Model
 {
     protected $table = 'rectifiers';
     
-    protected $fillable = ['recRadio', 'recCode','recBrand', 'recSno', 'recYear','recVolt', 'recLoad', 'recMod','recQty','recTRadio', 'recEtc', 'recTRadio2','recEtc2', 'recTRadio3', 'recEtc3','recTRadio4', 'recEtc4', 'recRadio2','recEtc5'];
+    protected $fillable = ['recRadio','recBrand', 'recSno', 'recYear','recVolt', 'recLoad', 'recMod','recQty','recTRadio', 'recEtc', 'recTRadio2','recEtc2', 'recTRadio3', 'recEtc3','recTRadio4', 'recEtc4', 'recRadio2','recEtc5'];
 
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['recRadio'];
-        $this->code = $data['recCode'];
         $this->brand = $data['recBrand'];
         $this->ctrlserial = $data['recSno'];
         $this->year = $data['recYear'];

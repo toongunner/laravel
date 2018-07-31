@@ -9,14 +9,12 @@ class Meter extends Model
 {
     protected $table = 'meters';
     
-    protected $fillable = ['metRadio', 'metQty', 'metCode','metSerial', 'metCon', 'metSize', 'metRadio2', 'metEtc'];
+    protected $fillable = ['metRadio','metSerial', 'metCon', 'metSize', 'metRadio2', 'metEtc'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['metRadio'];
-        $this->qty = $data['metQty'];
-        $this->code = $data['metCode'];
         $this->serial = $data['metSerial'];
         $this->Objcondition = $data['metCon'];
         $this->size = $data['metSize'];

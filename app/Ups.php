@@ -9,13 +9,12 @@ class Ups extends Model
 {
     protected $table = 'ups';
     
-    protected $fillable = ['upsRadio', 'upsQty', 'upsRoom','upsFl', 'upsCode', 'upsBrand','upsSno', 'upsMod', 'upsSize','upsYear','upsRadio2','upsEtc'];
+    protected $fillable = ['upsRadio','upsRoom','upsFl', 'upsCode', 'upsBrand','upsSno', 'upsMod', 'upsSize','upsYear','upsRadio2','upsEtc'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['upsRadio'];
-        $this->qty = $data['upsQty'];
         $this->room = $data['upsRoom'];
         $this->floor = $data['upsFl'];
         $this->code = $data['upsCode'];

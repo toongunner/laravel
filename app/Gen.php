@@ -9,13 +9,12 @@ class Gen extends Model
 {
     protected $table = 'gens';
     
-    protected $fillable = ['genRadio', 'genQty', 'genCode','EnBrand','EnSno', 'genYear','genBrand', 'genSno', 'genPhrase','genSize','genTRadio', 'genEtc', 'genTRadio2','genEtc2', 'genTRadio3', 'genEtc3','genTRadio4', 'genEtc4', 'genRadio2','genEtc5'];
+    protected $fillable = ['genRadio', 'genCode','EnBrand','EnSno', 'genYear','genBrand', 'genSno', 'genPhrase','genTRadio', 'genEtc', 'genTRadio2','genEtc2', 'genTRadio3', 'genEtc3','genTRadio4', 'genEtc4', 'genRadio2','genEtc5'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['genRadio'];
-        $this->qty = $data['genQty'];
         $this->code = $data['genCode'];
         $this->enbrand = $data['EnBrand'];
         $this->enserial = $data['EnSno'];
@@ -23,7 +22,6 @@ class Gen extends Model
         $this->genbrand = $data['genBrand'];
         $this->genserial = $data['genSno'];
         $this->phrase = $data['genPhrase'];
-        $this->size = $data['genSize'];
         $this->check1 = $data['genTRadio'];
         $this->note1 = $data['genEtc'];
         $this->check2 = $data['genTRadio2'];

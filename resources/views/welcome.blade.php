@@ -71,8 +71,8 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('login') }}">เข้าสู่ระบบ</a>
+                        <a href="{{ route('register') }}">สมัครสมาชิก</a>
                     @endauth
                 </div>
             @endif

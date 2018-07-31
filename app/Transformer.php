@@ -9,14 +9,12 @@ class Transformer extends Model
 {
     protected $table = 'transformers';
     
-    protected $fillable = ['tranRadio','tranQty','tranCode','tranBrand','tranPhrase','tranSize','tranYear','tranTRadio','tranEtc','tranTRadio2','tranEtc2','tranRadio2','tranEtc3'];
+    protected $fillable = ['tranRadio','tranBrand','tranPhrase','tranSize','tranYear','tranTRadio','tranEtc','tranTRadio2','tranEtc2','tranRadio2','tranEtc3'];
     
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['tranRadio'];
-        $this->qty = $data['tranQty'];      
-        $this->code = $data['tranCode'];
         $this->brand = $data['tranBrand'];
         $this->phrase = $data['tranPhrase'];
         $this->size = $data['tranSize'];
@@ -38,4 +36,6 @@ class Transformer extends Model
         $this->mby = Auth::user()->name;
         $this->save();
     }
+    
+   
 }

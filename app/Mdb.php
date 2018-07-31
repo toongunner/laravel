@@ -9,18 +9,15 @@ class Mdb extends Model
 {
     protected $table = 'mdbs';
     
-    protected $fillable = ['mdbRadio', 'mdbQty', 'mdbRadio2','mdbCode', 'mdbBrand', 'mdbPhrase','mdbSize', 'mdbYear', 'mdbMBreaker','mdbFXBreaker', 'mdbRLoad', 'mdbSLoad','mdbTLoad','mdbTRadio', 'mdbEtc', 'mdbTRadio2','mdbEtc2', 'mdbTRadio3', 'mdbEtc3','mdbTRadio4', 'mdbEtc4', 'mdbRadio3','mdbEtc5'];
+    protected $fillable = ['mdbRadio','mdbRadio2','mdbBrand', 'mdbPhrase','mdbYear', 'mdbMBreaker','mdbFXBreaker', 'mdbRLoad', 'mdbSLoad','mdbTLoad','mdbTRadio', 'mdbEtc', 'mdbTRadio2','mdbEtc2', 'mdbTRadio3', 'mdbEtc3','mdbTRadio4', 'mdbEtc4', 'mdbRadio3','mdbEtc5'];
 
     public function saveData($data)
     {
         $this->locid = $data['locationid'];
         $this->available = $data['mdbRadio'];
-        $this->qty = $data['mdbQty'];
         $this->type = $data['mdbRadio2'];
-        $this->code = $data['mdbCode'];
         $this->brand = $data['mdbBrand'];
         $this->phrase = $data['mdbPhrase'];
-        $this->size = $data['mdbSize'];
         $this->year = $data['mdbYear'];
         $this->mcb = $data['mdbMBreaker'];
         $this->fx = $data['mdbFXBreaker'];
