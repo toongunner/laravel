@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Rectifier extends Model
 {
-    protected $table = 'rectifiers';
+    protected $table = 'rectifytest';
     
     protected $fillable = ['recRadio','recBrand', 'recSno', 'recYear','recVolt', 'recLoad', 'recMod','recQty','recTRadio', 'recEtc', 'recTRadio2','recEtc2', 'recTRadio3', 'recEtc3','recTRadio4', 'recEtc4', 'recRadio2','recEtc5'];
 

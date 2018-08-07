@@ -43,7 +43,8 @@
                     <td>{{$data->longt}}</td>
                     <td><a href="{{ 'adddata/'.$data->locid.'/edit' }}"><button type="submit" class="btn btn-warning">ADD</button></a></td>
                     <td><a href="{{'adddata/'.$data->locid}}"><button type="submit" class="btn btn-warning">View</button></a></td>					
-					<td><a href="{{ 'pdf/'.$data->pdf }}" target="_blank">{{$data->pdf}}</a></td>
+					<!-- <td><a href="{{url('pdf/'.$data->pdf) }}" target="_blank">{{$data->pdf}}</a></td> -->
+					<td><form action="{{url('pdf/view')}}" method="post"><input name="pdf" value="{{$data->pdf}}" type="hidden"><button type="submit" class="btn btn-warning">{{csrf_field()}}	{{$data->pdf}}</button> </form></td>
                   </tr>
   			@endforeach        
                 </tbody>               

@@ -39,7 +39,7 @@
     	<a class="nav-link" rel="invert">Inverter</a>
     	</li>
     	<li class="nav-item" id="img" tabindex="10">
-    	<a class="nav-link" rel="imgs">Images/PDF</a>
+    	<a class="nav-link" rel="imgs">Images</a>
     	</li>
     </ul></strong>
 </div>
@@ -833,6 +833,7 @@
               <img src="{{asset('/'.$img->locid.'/'.$img->imgname) }}" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
               <input name="imgname" value="{{$img->imgname}}" type="hidden">
               <input name="locid" value="{{$img->locid}}" type="hidden">
+              <input name="id" value="{{$img->id}}" type="hidden">
             </div>
           	<button type="submit" class="btn btn-primary" style="margin-top:10px" name="imgdelbtn">ลบ</button>
 			</form>

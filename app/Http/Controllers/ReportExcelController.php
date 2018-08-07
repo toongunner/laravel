@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Maatwebsite\Excel\Facades\Excel;
+
 
 
 class ReportExcelController extends Controller
@@ -12,20 +12,20 @@ class ReportExcelController extends Controller
    public function index()
    {
        $trancount = DB::table('transformers')->count('locid');
-       $tranpass = DB::table('transformers')->where('result','=','pass')->count('result');
-       $tranfail = DB::table('transformers')->where('result','=','fail')->count('result');
+       $tranpass = DB::table('transformers')->where('result','=','ผ่าน')->count('result');
+       $tranfail = DB::table('transformers')->where('result','=','ไม่ผ่าน')->count('result');
        
        $mecount = DB::table('meters')->count('locid');
        $mepass = DB::table('meters')->where('result','=','ผ่าน')->count('result');
        $mefail = DB::table('meters')->where('result','=','ไม่ผ่าน')->count('result');
        
-       $mdbcount = DB::table('mdbs')->count('locid');
-       $mdbpass = DB::table('mdbs')->where('result','=','pass')->count('result');
-       $mdbfail = DB::table('mdbs')->where('result','=','fail')->count('result');
+       $mdbcount = DB::table('mdbtest')->count('locid');
+       $mdbpass = DB::table('mdbtest')->where('result','=','ผ่าน')->count('result');
+       $mdbfail = DB::table('mdbtest')->where('result','=','ไม่ผ่าน')->count('result');
        
        $gencount = DB::table('gens')->count('locid');
-       $genpass = DB::table('gens')->where('result','=','pass')->count('result');
-       $genfail = DB::table('gens')->where('result','=','fail')->count('result');
+       $genpass = DB::table('gens')->where('result','=','ผ่าน')->count('result');
+       $genfail = DB::table('gens')->where('result','=','ไม่ผ่าน')->count('result');
        
        $reccount = DB::table('rectifytest')->count('locid');
        $recpass = DB::table('rectifytest')->where('result','=','ผ่าน')->count('result');
@@ -59,9 +59,8 @@ class ReportExcelController extends Controller
    public function battIndex()
    {
        $batt = DB::table('batttest')
-       ->select(DB::raw("count(batttest.locid) as loccount"),'batttest.locid','batttest.result','note6','location.name')
+       ->select(DB::raw("count(batttest.locid) as loccount"),'batttest.locid','batttest.result','note6','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','batttest.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note6')
@@ -73,9 +72,8 @@ class ReportExcelController extends Controller
    public function airIndex()
    {
        $air = DB::table('airstest')
-       ->select(DB::raw("count(airstest.locid) as loccount"),'airstest.locid','airstest.result','note1','location.name')
+       ->select(DB::raw("count(airstest.locid) as loccount"),'airstest.locid','airstest.result','note1','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','airstest.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note1')
@@ -87,9 +85,8 @@ class ReportExcelController extends Controller
    public function mdbIndex()
    {
        $mdb = DB::table('mdbtest')
-       ->select(DB::raw("count(mdbtest.locid) as loccount"),'mdbtest.locid','mdbtest.result','note5','location.name')
+       ->select(DB::raw("count(mdbtest.locid) as loccount"),'mdbtest.locid','mdbtest.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','mdbtest.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note5')
@@ -101,9 +98,8 @@ class ReportExcelController extends Controller
    public function meterIndex()
    {
        $meter = DB::table('meters')
-       ->select(DB::raw("count(meters.locid) as loccount"),'meters.locid','meters.result','note','location.name')
+       ->select(DB::raw("count(meters.locid) as loccount"),'meters.locid','meters.result','note','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','meters.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note')
@@ -115,9 +111,8 @@ class ReportExcelController extends Controller
    public function rectifyIndex()
    {
        $rec = DB::table('rectifytest')
-       ->select(DB::raw("count(rectifytest.locid) as loccount"),'rectifytest.locid','rectifytest.result','note5','location.name')
+       ->select(DB::raw("count(rectifytest.locid) as loccount"),'rectifytest.locid','rectifytest.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','rectifytest.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note5')
@@ -129,9 +124,8 @@ class ReportExcelController extends Controller
    public function transformerIndex()
    {
        $tran = DB::table('transformers')
-       ->select(DB::raw("count(transformers.locid) as loccount"),'transformers.locid','transformers.result','note3','location.name')
+       ->select(DB::raw("count(transformers.locid) as loccount"),'transformers.locid','transformers.result','note3','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','transformers.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note3')
@@ -143,9 +137,8 @@ class ReportExcelController extends Controller
    public function genIndex()
    {
        $gen = DB::table('gens')
-       ->select(DB::raw("count(gens.locid) as loccount"),'gens.locid','gens.result','note5','location.name')
+       ->select(DB::raw("count(gens.locid) as loccount"),'gens.locid','gens.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','gens.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note5')
@@ -157,9 +150,8 @@ class ReportExcelController extends Controller
    public function upsIndex()
    {
        $ups = DB::table('ups')
-       ->select(DB::raw("count(ups.locid) as loccount"),'ups.locid','ups.result','note1','location.name')
+       ->select(DB::raw("count(ups.locid) as loccount"),'ups.locid','ups.result','note1','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','ups.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note1')
@@ -171,9 +163,8 @@ class ReportExcelController extends Controller
    public function inverterIndex()
    {
        $inv = DB::table('inverters')
-       ->select(DB::raw("count(inverters.locid) as loccount"),'inverters.locid','inverters.result','note1','location.name')
+       ->select(DB::raw("count(inverters.locid) as loccount"),'inverters.locid','inverters.result','note1','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','inverters.locid','=','location.locid')
-       ->where('result','ไม่ผ่าน')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note1')
@@ -182,4 +173,94 @@ class ReportExcelController extends Controller
        return view('reportinver',compact('inv'));
    }
    
+   public function equpAll()
+   {
+      $batt = DB::table('batttest')
+       ->select(DB::raw("count(batttest.locid) as loccount"),'batttest.locid','batttest.result','note6','location.name')
+       ->join('location','batttest.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note6')
+       ->groupBy('location.name');
+       
+       $air = DB::table('airstest')
+       ->select(DB::raw("count(airstest.locid) as loccount"),'airstest.locid','airstest.result','note1','location.name')
+       ->join('location','airstest.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note1')
+       ->groupBy('location.name');
+       
+       $mdb = DB::table('mdbtest')
+       ->select(DB::raw("count(mdbtest.locid) as loccount"),'mdbtest.locid','mdbtest.result','note5','location.name')
+       ->join('location','mdbtest.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note5')
+       ->groupBy('location.name');
+       
+       $meter = DB::table('meters')
+       ->select(DB::raw("count(meters.locid) as loccount"),'meters.locid','meters.result','note','location.name')
+       ->join('location','meters.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note')
+       ->groupBy('location.name');
+       
+       $rec = DB::table('rectifytest')
+       ->select(DB::raw("count(rectifytest.locid) as loccount"),'rectifytest.locid','rectifytest.result','note5','location.name')
+       ->join('location','rectifytest.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note5')
+       ->groupBy('location.name');
+       
+       $tran = DB::table('transformers')
+       ->select(DB::raw("count(transformers.locid) as loccount"),'transformers.locid','transformers.result','note3','location.name')
+       ->join('location','transformers.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note3')
+       ->groupBy('location.name');
+       
+       $gen = DB::table('gens')
+       ->select(DB::raw("count(gens.locid) as loccount"),'gens.locid','gens.result','note5','location.name')
+       ->join('location','gens.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note5')
+       ->groupBy('location.name');
+       
+       $ups = DB::table('ups')
+       ->select(DB::raw("count(ups.locid) as loccount"),'ups.locid','ups.result','note1','location.name')
+       ->join('location','ups.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note1')
+       ->groupBy('location.name');
+       
+       $all = DB::table('inverters')
+       ->select(DB::raw("count(inverters.locid) as loccount"),'inverters.locid','inverters.result','note1','location.name')
+       ->join('location','inverters.locid','=','location.locid')
+       ->where('result','ไม่ผ่าน')
+       ->groupBy('locid')
+       ->groupBy('result')
+       ->groupBy('note1')
+       ->groupBy('location.name')
+       ->union($batt)
+       ->union($air)
+       ->get();
+       
+       $test = DB::table('location')->take(5)->get();
+       
+       return view('reportallEqp',compact('test'));
+   }
 }

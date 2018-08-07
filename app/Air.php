@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class Air extends Model
 {
-    protected $table = 'airs';
+    protected $table = 'airstest';
     
-    protected $fillable = ['acRadio','acRoom','acFl','acTmp','acRadio2','acCode','acSup','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acuYear','acRadio3','acuEtc'];
+    protected $fillable = ['acRadio','acRoom','acFl','acTmp','acRadio2','acCode','acSup','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acRadio3','acuEtc'];
     
     public function saveData($data)
     {
@@ -28,7 +28,6 @@ class Air extends Model
         $this->acubrand = $data['acuName'];
         $this->acumodel = $data['acuMod'];
         $this->acuserial = $data['acuSer'];
-        $this->year = $data['acuYear'];
         $this->result = $data['acRadio3'];
         $this->note1 = $data['acuEtc'];
         $this->mby = Auth::user()->name;

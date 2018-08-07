@@ -471,11 +471,12 @@ class AddDataController extends Controller
     public function deleteImage(Request $request)
     {
         $imgname = $request->get('imgname');
+        $id = $request->get('id');
         $locid = $request->get('locid');
         $imgpath = public_path($locid.'/'.$imgname);        
         if(File::exists($imgpath)) {
             File::delete($imgpath);
-           /*  DB::table('images')->delete(); */
+            DB::table('images')->where('id',$id)->delete();
         }
         return redirect()->back()->with('success','ลบรูปภาพแล้ว !!'); 
     }

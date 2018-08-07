@@ -331,7 +331,7 @@ class UpdateController extends Controller
      */
     public function show($id)
     {
-        //
+        return "pdf";
     }
 
     /**

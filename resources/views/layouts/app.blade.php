@@ -29,7 +29,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        INDEX
+                       	หน้าแรก
+                    </a>
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                                                       เมนูหลัก
                     </a>
                 </div>
 

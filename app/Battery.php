@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Battery extends Model
 {
-    protected $table = 'batteries';
+    protected $table = 'batttest';
     
     protected $fillable = ['battRadio', 'battRoom','battFl', 'battBrand', 'battMod','battSize', 'battYear','battQty'.'battCellQty','battTRadio', 'battEtc', 'battTRadio2','battEtc2', 'battTRadio3', 'battEtc3','battTRadio4', 'battEtc4','battTRadio5','battEtc5','battRadio2','battEtc6'];
 

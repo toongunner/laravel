@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Mdb extends Model
 {
-    protected $table = 'mdbs';
+    protected $table = 'mdbtest';
     
     protected $fillable = ['mdbRadio','mdbRadio2','mdbBrand', 'mdbPhrase','mdbYear', 'mdbMBreaker','mdbFXBreaker', 'mdbRLoad', 'mdbSLoad','mdbTLoad','mdbTRadio', 'mdbEtc', 'mdbTRadio2','mdbEtc2', 'mdbTRadio3', 'mdbEtc3','mdbTRadio4', 'mdbEtc4', 'mdbRadio3','mdbEtc5'];
 

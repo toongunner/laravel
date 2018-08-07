@@ -32,7 +32,7 @@ Route::post('/image', 'AddDataController@storeImage');
 Route::post('/imgdel','AddDataController@deleteImage');
 
 Route::post('/pdf', 'AddDataController@storePDF');
-Route::get('/pdf/{id}', 'SearchController@showPDF');
+Route::post('/pdf/view', 'SearchController@showPDF');
 
 Route::resource('/update','UpdateController');
 
@@ -46,3 +46,4 @@ Route::get('/report/transformer','ReportExcelController@transformerIndex');
 Route::get('/report/gen','ReportExcelController@genIndex');
 Route::get('/report/ups','ReportExcelController@upsIndex');
 Route::get('/report/inverter','ReportExcelController@inverterIndex');
+Route::get('/report/all','ReportExcelController@equpAll');

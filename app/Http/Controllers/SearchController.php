@@ -43,11 +43,13 @@ class SearchController extends Controller
     }
     
     
-    public function showPDF($id)
+    public function showPDF(Request $request)
     {
+        $id = $request->get('pdf');
          $path = storage_path('app/'.$id);
          return response()->file($path);
 //        return response()->file('./storage/app/'.$id);
+
     }
     /**
      * Store a newly created resource in storage.
@@ -68,7 +70,7 @@ class SearchController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**

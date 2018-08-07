@@ -14,7 +14,8 @@
                     <th>LocationID</th>
                     <th>ชื่อชุมสาย</th>
                     <th>จำนวน (Set)</th>
-                    <th>ผลการตรวจสอบ</th>
+                    <th>ผ่าน</th>
+                    <th>ไม่ผ่าน</th>
                     <th>หมายเหตุ</th>
                   </tr>
                 </thead>
@@ -24,7 +25,8 @@
                       	<td>{{$g->locid}}</td>
                       	<td>{{$g->name}}</td>
                       	<td>{{$g->loccount}}</td>
-                      	<td>{{$g->result}}</td>
+                      	<td>{{$g->pass}}</td>
+                      	<td>{{$g->fail}}</td>
                       	<td>{{$g->note5}}</td>
                       </tr>  
                       @endforeach
