@@ -65,6 +65,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note6')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
            return view('report2',compact('batt'));
    }
@@ -78,6 +79,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note1')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportair',compact('air'));
    }
@@ -91,6 +93,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note5')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportmdb',compact('mdb'));
    }
@@ -104,6 +107,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportmeter',compact('meter'));
    }
@@ -117,6 +121,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note5')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportrectify',compact('rec'));
    }
@@ -130,6 +135,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note3')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reporttransformer',compact('tran'));
    }
@@ -143,6 +149,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note5')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportgen',compact('gen'));
    }
@@ -156,6 +163,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note1')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportups',compact('ups'));
    }
@@ -169,6 +177,7 @@ class ReportExcelController extends Controller
        ->groupBy('result')
        ->groupBy('note1')
        ->groupBy('location.name')
+       ->orderBy('location.name','asc')
        ->get();
        return view('reportinver',compact('inv'));
    }
