@@ -133,8 +133,8 @@
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง Transformer อยู่ในสภาพที่มั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="tranTRadio2" id="tranTRadioP2" value="passT2" {{($t->check2=="passT2")? "checked" : "" }}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="tranTRadio2" id="tranTRadioF2" value="failT2" {{($t->check2=="failT2")? "checked" : "" }}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="tranTRadio2" id="tranTRadioP2" value="passT2" {{($t->check2=="ผ่าน")? "checked" : "" }}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="tranTRadio2" id="tranTRadioF2" value="failT2" {{($t->check2=="ไม่ผ่าน")? "checked" : "" }}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text"  id="tranEtc2" name="tranEtc2" value="{{$t->note2}}"></div></td>
 					</tr>     			
     			</tbody>    						
