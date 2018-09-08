@@ -577,36 +577,36 @@
 					<tr>
 					<td>1</td>
 					<td>ตรวจสอบสภาพของอุปกรณือยู่ในสภาพสมบูรณ์ไม่ได้รับความเสียหาย</td>
-					<td><div class="radio-inline "><label><input type="radio" name="battTRadio" id="battTRadioP" value="passT1" {{($b->check1=="passT1"? "checked" : "")}}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioF" value="failT1" {{($b->check1=="failT1"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline "><label><input type="radio" name="battTRadio" id="battTRadioP" value="ผ่าน" {{($b->check1=="ผ่าน"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio" id="battTRadioF" value="ไม่ผ่าน" {{($b->check1=="ไม่ผ่าน"? "checked" : "")}}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" id="battEtc" name="battEtc" value="{{$b->note1}}"></div></td>
 					</tr>
 					<tr>
 					<td>2</td>
 					<td>ตรวจสอบการติดตั้ง Battery และ  Battery Rack อยู่ในสภาพมั่นคงแข็งแรง</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioP2" value="passT2" {{($b->check2=="passT2"? "checked" : "")}}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioF2" value="failT2" {{($b->check2=="failT2"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioP2" value="ผ่าน" {{($b->check2=="ผ่าน"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio2" id="battTRadioF2" value="ไม่ผ่าน" {{($b->check2=="ไม่ผ่าน"? "checked" : "")}}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" id="battEtc2" name="battEtc2" value="{{$b->note2}}"></div></td>
 					</tr>
 					<tr>
 					<td>3</td>
 					<td>ตรวจสอบสายไฟจุดเชื่อมต่อระหว่าง Battery ถูกไขยึดติดอย่างแน่นหนา</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioP3" value="passT3" {{($b->check3=="passT3"? "checked" : "")}}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioF3" value="failT3" {{($b->check3=="failT3"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioP3" value="ผ่าน" {{($b->check3=="ผ่าน"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio3" id="battTRadioF3" value="ไม่ผ่าน" {{($b->check3=="ไม่ผ่าน"? "checked" : "")}}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text"  id="battEtc3" name="battEtc3" value="{{$b->note3}}"></div></td>
 					</tr>
 					<tr>
 					<td>4</td>
 					<td>มี Label หรือ Code สีบอกที่ขั้วสายไฟชัดเจน</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioP4" value="passT4" {{($b->check4=="passT4"? "checked" : "")}}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioF4" value="failT4" {{($b->check4=="failT4"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioP4" value="ผ่าน" {{($b->check4=="ผ่าน"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio4" id="battTRadioF4" value="ไม่ผ่าน" {{($b->check4=="ไม่ผ่าน"? "checked" : "")}}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text"  id="battEtc4" name="battEtc4" value="{{$b->note4}}"></div></td>
 					</tr>
 					<tr>
 					<td>5</td>
 					<td>ตรวจสอบ Case ของแบตเตอรี่อยู่ในสภาพปกติ</td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioP5" value="passT5" {{($b->check5=="passT5"? "checked" : "")}}></label></div></td>
-					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioF5" value="failT5" {{($b->check5=="failT5"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioP5" value="ผ่าน" {{($b->check5=="ผ่าน"? "checked" : "")}}></label></div></td>
+					<td><div class="radio-inline"><label><input type="radio" name="battTRadio5" id="battTRadioF5" value="ไม่ผ่าน" {{($b->check5=="ไม่ผ่าน"? "checked" : "")}}></label></div></td>
 					<td><div class="col-sm"><input class="form-control form-control-sm" type="text" id="battEtc5" name="battEtc5" value="{{$b->note5}}"></div></td>
 					</tr>      			
     			</tbody>    						

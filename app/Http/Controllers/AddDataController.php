@@ -518,7 +518,7 @@ class AddDataController extends Controller
     public function show($id)
     {
         $air = DB::table('airstest')->where('locid',$id)->orderBy('id')->get();
-        $batt = DB::table('batteries')->where('locid',$id)->orderBy('id')->get();
+        $batt = DB::table('batttest')->where('locid',$id)->orderBy('id')->get();
         $gen = DB::table('gens')->where('locid',$id)->orderBy('id')->get();
         $image = DB::table('images')->where('locid',$id)->orderBy('id')->get();
         $inver = DB::table('inverters')->where('locid',$id)->orderBy('id')->get();

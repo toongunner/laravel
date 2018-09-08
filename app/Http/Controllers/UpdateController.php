@@ -89,7 +89,7 @@ class UpdateController extends Controller
             $note1 = $request->get('acuEtc');
             $mby = Auth::user()->name;
             
-            DB::table('airs')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'room'=>$room,'floor'=>$floor,'temp'=>$temp,'type'=>$type
+            DB::table('airstest')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'room'=>$room,'floor'=>$floor,'temp'=>$temp,'type'=>$type
                 ,'code'=>$code,'powersup'=>$powersup,'fcubrand'=>$fcubrand,'fcumodel'=>$fcumodel,'fcuserial'=>$fcuserial,'size'=>$size,'acubrand'=>$acubrand
                 ,'acumodel'=>$acumodel,'acuserial'=>$acuserial,'year'=>$year,'result'=>$result,'note1'=>$note1,'mby'=>$mby));
             return redirect()->back()->with('success','แก้ไขข้อมููลสำเร็จ !!');
@@ -98,7 +98,7 @@ class UpdateController extends Controller
         else if ($request->has('acdelbtn'))
         {
             $id = $request->get('id');
-            DB::table('airs')->where('id',$id)->delete();
+            DB::table('airstest')->where('id',$id)->delete();
             return redirect()->back()->with('success','ลบข้อมููลสำเร็จ !!');
         }
         
@@ -129,7 +129,7 @@ class UpdateController extends Controller
             $note6 = $request->get('battEtc6');
             $mby = Auth::user()->name;
             
-            DB::table('batteries')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'qty'=>$qty,'room'=>$room,'floor'=>$floor,'brand'=>$brand,'model'=>$model
+            DB::table('batttest')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'qty'=>$qty,'room'=>$room,'floor'=>$floor,'brand'=>$brand,'model'=>$model
                 ,'year'=>$year,'cellqty'=>$cellqty,'size'=>$size,'check1'=>$check1,'note1'=>$note1,'check2'=>$check2,'note2'=>$note2
                 ,'check3'=>$check3,'note3'=>$note3,'check4'=>$check4,'note4'=>$note4,'check5'=>$check5,'note5'=>$note5,'result'=>$result,'note6'=>$note6,'mby'=>$mby));
             return redirect()->back()->with('success','แก้ไขข้อมููลสำเร็จ !!');
@@ -137,7 +137,7 @@ class UpdateController extends Controller
         else if ($request->has('battdelbtn'))
         {
             $id = $request->get('id');
-            DB::table('batteries')->where('id',$id)->delete();
+            DB::table('batttest')->where('id',$id)->delete();
             return redirect()->back()->with('success','ลบข้อมููลสำเร็จ !!');
         }
         
