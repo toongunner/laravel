@@ -27,7 +27,7 @@
                       	<td>{{$u->loccount}}</td>
                       	<td>{{$u->pass}}</td>
                       	<td>{{$u->fail}}</td>
-                      	<td>{{$u->note5}}</td>
+                      	<td>{{$u->note1}}</td>
                       </tr>  
                       @endforeach
                 </tbody>               

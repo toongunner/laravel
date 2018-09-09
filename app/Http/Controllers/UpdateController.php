@@ -318,7 +318,7 @@ class UpdateController extends Controller
             $mby = Auth::user()->name;
             
             DB::table('inverters')->where('id',$id)->update(array('locid'=>$locid,'available'=>$avail,'$room'=>$room,'floor'=>$floor,'code'=>$code,'brand'=>$brand
-                ,'serial'=>$serial,'model'=>model,'size'=>$size,'year'=>$year,'result'=>$result,'note3'=>$note3,'mby'=>$mby));
+                ,'serial'=>$serial,'model'=>model,'size'=>$size,'year'=>$year,'result'=>$result,'note1'=>$note1,'mby'=>$mby));
             return redirect()->back()->with('success','แก้ไขข้อมููลสำเร็จ !!');
         }
     }
