@@ -88,6 +88,11 @@
                     <td>{{$all}}</td>
                     <td>{{$allpass}}</td>
                     <td>{{$allfail}}</td>
+                  </tr>
+                  <tr>
+                    <td>จำนวนไซต์ทั้งหมดที่ได้ทำการกรอกข้อมูล</td>
+                    <td></td>
+                    <td>50</td>
                   </tr>       
                 </tbody>               
   			</table>
