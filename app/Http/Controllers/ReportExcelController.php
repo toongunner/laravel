@@ -162,8 +162,7 @@ class ReportExcelController extends Controller
    public function genIndex()
    {
        $gen = DB::table('gens')
-       ->select(DB::raw("count(gens.locid) as loccount"),'g
-ens.locid','gens.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
+       ->select(DB::raw("count(gens.locid) as loccount"),'gens.locid','gens.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','gens.locid','=','location.locid')
        ->groupBy('locid')
        ->groupBy('result')
