@@ -22,63 +22,63 @@
                   <tr>
                     <td>1</td>
                     <td>Transformer</td>
-                    <td>{{$trancount}}</td>
+                    <td>{{$tranall}}</td>
                     <td>{{$tranpass}}</td>
                     <td>{{$tranfail}}</td>
                   </tr>
                   <tr>
                     <td>2</td>
                     <td>Meter</td>
-                    <td>{{$mecount}}</td>
+                    <td>{{$meall}}</td>
                     <td>{{$mepass}}</td>
                     <td>{{$mefail}}</td>
                   </tr> 
                   <tr>
                     <td>3</td>
                     <td>MDB</td>
-                    <td>{{$mdbcount}}</td>
+                    <td>{{$mdball}}</td>
                     <td>{{$mdbpass}}</td>
                     <td>{{$mdbfail}}</td>
                   </tr> 
                   <tr>
                     <td>4</td>
                     <td>Generator</td>
-                    <td>{{$gencount}}</td>
+                    <td>{{$genall}}</td>
                     <td>{{$genpass}}</td>
                     <td>{{$genfail}}</td>
                   </tr> 
                   <tr>
                     <td>5</td>
                     <td>Rectifier</td>
-                    <td>{{$reccount}}</td>
+                    <td>{{$recall}}</td>
                     <td>{{$recpass}}</td>
                     <td>{{$recfail}}</td>
                   </tr> 
                   <tr>
                     <td>6</td>
                     <td>Battery</td>
-                    <td>{{$battcount}}</td>
+                    <td>{{$battall}}</td>
                     <td>{{$battpass}}</td>
                     <td>{{$battfail}}</td>
                   </tr> 
                   <tr>
                     <td>7</td>
                     <td>AirCondition</td>
-                    <td>{{$aircount}}</td>
+                    <td>{{$airall}}</td>
                     <td>{{$airpass}}</td>
                     <td>{{$airfail}}</td>
                   </tr> 
                   <tr>
                     <td>8</td>
                     <td>Inverter</td>
-                    <td>{{$invcount}}</td>
+                    <td>{{$invall}}</td>
                     <td>{{$invpass}}</td>
                     <td>{{$invfail}}</td>
                   </tr> 
                   <tr>
                     <td>9</td>
                     <td>UPS</td>
-                    <td>{{$upscount}}</td>
+                    <td>{{$upsall}}</td>
                     <td>{{$upspass}}</td>
                     <td>{{$upsfail}}</td>
                   </tr>
