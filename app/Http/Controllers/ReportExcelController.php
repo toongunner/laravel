@@ -164,6 +164,7 @@ class ReportExcelController extends Controller
        $gen = DB::table('gens')
        ->select(DB::raw("count(gens.locid) as loccount"),'gens.locid','gens.result','note5','location.name',DB::raw("sum(CASE WHEN result = 'ผ่าน' THEN 1 ELSE 0 END) AS pass"),DB::raw("sum(CASE WHEN result = 'ไม่ผ่าน' THEN 1 ELSE 0 END) AS fail"))
        ->join('location','gens.locid','=','location.locid')
+       ->where('available','=','มี')
        ->groupBy('locid')
        ->groupBy('result')
        ->groupBy('note5')
