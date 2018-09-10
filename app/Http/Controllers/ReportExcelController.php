@@ -47,6 +47,8 @@ class ReportExcelController extends Controller
        $upspass = DB::table('ups')->where('result','=','ผ่าน')->count('result');
        $upsfail = DB::table('ups')->where('result','=','ไม่ผ่าน')->count('result');
        
+       $allsite = DB::table('meters')->distinct('locid')->count('locid');
+       
        $all = $trancount + $mecount + $mdbcount + $gencount + $reccount + $battcount + $aircount + $invcount + $upscount;
        $allpass = $tranpass + $mepass + $mdbpass + $genpass + $recpass + $battpass + $airpass + $invpass + $upspass;
        $allfail = $tranfail + $mefail + $mdbfail + $genfail + $recfail + $battfail + $airfail + $invfail + $upsfail;
@@ -59,12 +61,12 @@ class ReportExcelController extends Controller
        $battall = $battpass+$battfail;
        $airall = $airpass+$airfail;
        $invall = $invpass+$invfail;
-       $upsall = $upspass+$upsfail;
+       $upsall = $upspass+$upsfail;       
        
        return view('report',compact('trancount','tranpass','tranfail','mecount','mepass','mefail','mdbcount','mdbpass','mdbfail','gencount','all',
            'genpass','genfail','reccount','recpass','recfail','battcount','battpass','battfail','aircount','airpass','airfail','invcount',
            'invpass','invfail','upscount','upspass','upsfail','allpass','allfail',
-           'tranall','meall','mdball','genall','recall','battall','airall','invall','upsall'));
+           'tranall','meall','mdball','genall','recall','battall','airall','invall','upsall','allsite'));
    }
     
    public function battIndex()
