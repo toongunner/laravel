@@ -342,7 +342,6 @@
         	</div>
         	<div class="form-group">			   		
     			<div class="row">
-    			<div class="col-sm-2">รหัสสินทรัพย์<input class="form-control form-control-sm" type="text"  id="genCode" name="genCode" value="{{$g->code}}"></div>
     			<div class="col-sm-2">Engine Brand Name<input class="form-control form-control-sm" type="text"  id="EnBrand" name="EnBrand" value="{{$g->enbrand}}"></div>
     			<div class="col-sm-2">Engine Serial No<input class="form-control form-control-sm" type="text"  id="EnSno" name="EnSno" value="{{$g->enserial}}"></div>
     			</div>
@@ -662,8 +661,7 @@
         	</div>
         	</div>
         	<div class="form-group">
-    			<div class="row">
-    			<div class="col-sm-2">รหัสสินทรัพย์<input class="form-control form-control-sm" type="text"  id="acCode" name="acCode" value="{{$a->code}}"></div>
+    			<div class="row">   			
     			<div class="col-sm-3">Power Supply(V-Ph-Hz)<input class="form-control form-control-sm" type="text"  id="acSup" name="acSup" value="{{$a->powersup}}"></div>
     			</div>
     		</div>
@@ -729,8 +727,7 @@
     			</div>
     		</div>
         	<div class="form-group">			   		
-    			<div class="row">
-    			<div class="col-sm-2">รหัสสินทรัพย์<input class="form-control form-control-sm" type="text"  id="upsCode" name="upsCode" value="{{$u->code}}"></div>	
+    			<div class="row">	
     			<div class="col-sm-2">ยี่ห้อ<input class="form-control form-control-sm" type="text"  id="upsBrand" name="upsBrand" value="{{$u->brand}}"></div>
     			<div class="col-sm-2">Serial<input class="form-control form-control-sm" type="text"  id="upsSno" name="upsSno" value="{{$u->serial}}"></div>
     			<div class="col-sm-2">Model<input class="form-control form-control-sm" type="text"  id="upsMod" name="upsMod" value="{{$u->model}}"></div>
@@ -787,7 +784,6 @@
     		</div>
         	<div class="form-group">			   		
     			<div class="row">
-    			<div class="col-sm-2">รหัสสินทรัพย์<input class="form-control form-control-sm" type="text"  id="invCode" name="invCode" value="{{$in->code}}"></div>	
     			<div class="col-sm-2">ยี่ห้อ<input class="form-control form-control-sm" type="text"  id="invBrand" name="invBrand" value="{{$in->brand}}"></div>
     			<div class="col-sm-2">Serial<input class="form-control form-control-sm" type="text"  id="invSno" name="invSno" value="{{$in->serial}}"></div>
     			<div class="col-sm-2">Model<input class="form-control form-control-sm" type="text"  id="invMod" name="invMod" value="{{$in->model}}"></div>
