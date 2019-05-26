@@ -608,7 +608,6 @@
         	</div>
         	<div class="form-group">		   		
     			<div class="row">
-    			<div class="col-sm-2"><input class="form-control form-control-sm" type="text"  id="acCode" name="acCode" placeholder="รหัสสินทรัพย์"></div>
     			<div class="col-sm-3"><input class="form-control form-control-sm" type="text"  id="acSup" name="acSup" placeholder="Power Supply(V-Ph-Hz)"></div>
     			</div>
     		</div>

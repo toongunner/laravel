@@ -74,8 +74,7 @@ class UpdateController extends Controller
             $room = $request->get('acRoom');
             $floor = $request->get('acFl');
             $temp = $request->get('acTmp');
-            $type = $request->get('acRadio2');
-            $code = $request->get('acCode');
+            $type = $request->get('acRadio2');            
             $powersup = $request->get('acSup');
             $fcubrand = $request->get('fcuName');
             $fcumodel = $request->get('fcuMod');
@@ -90,7 +89,7 @@ class UpdateController extends Controller
             $mby = Auth::user()->name;
             
             DB::table('airstest')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'room'=>$room,'floor'=>$floor,'temp'=>$temp,'type'=>$type
-                ,'code'=>$code,'powersup'=>$powersup,'fcubrand'=>$fcubrand,'fcumodel'=>$fcumodel,'fcuserial'=>$fcuserial,'size'=>$size,'acubrand'=>$acubrand
+                ,'powersup'=>$powersup,'fcubrand'=>$fcubrand,'fcumodel'=>$fcumodel,'fcuserial'=>$fcuserial,'size'=>$size,'acubrand'=>$acubrand
                 ,'acumodel'=>$acumodel,'acuserial'=>$acuserial,'year'=>$year,'result'=>$result,'note1'=>$note1,'mby'=>$mby));
             return redirect()->back()->with('success','แก้ไขข้อมููลสำเร็จ !!');
             

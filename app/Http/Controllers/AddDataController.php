@@ -64,7 +64,6 @@ class AddDataController extends Controller
                 'acFl'=>'nullable',
                 'acTmp'=>'nullable',
                 'acRadio2'=>'required|in:split,freeblow,precision',
-                'acCode'=>'nullable',
                 'acSup'=>'nullable',
                 'fcuName'=>'nullable',
                 'fcuMod'=>'nullable',
