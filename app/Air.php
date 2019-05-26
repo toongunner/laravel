@@ -9,7 +9,7 @@ class Air extends Model
 {
     protected $table = 'airstest';
     
-    protected $fillable = ['acRadio','acRoom','acFl','acTmp','acRadio2','acCode','acSup','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acRadio3','acuEtc'];
+    protected $fillable = ['acRadio','acRoom','acFl','acTmp','acRadio2','acSup','fcuName','fcuMod','fcuSer','fcuSize','acuName','acuMod','acuSer','acRadio3','acuEtc'];
     
     public function saveData($data)
     {
@@ -19,7 +19,6 @@ class Air extends Model
         $this->floor = $data['acFl'];
         $this->temp = $data['acTmp'];
         $this->type = $data['acRadio2'];
-        $this->code = $data['acCode'];
         $this->powersup = $data['acSup'];
         $this->fcubrand = $data['fcuName'];
         $this->fcumodel = $data['fcuMod'];

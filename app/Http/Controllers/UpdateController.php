@@ -83,14 +83,13 @@ class UpdateController extends Controller
             $acubrand = $request->get('acuName');
             $acumodel = $request->get('acuMod');
             $acuserial = $request->get('acuSer');
-            $year = $request->get('acuYear');
             $result = $request->get('acRadio3');
             $note1 = $request->get('acuEtc');
             $mby = Auth::user()->name;
             
             DB::table('airstest')->where('id',$id)->update(array('locid'=>$locid,'available'=>$available,'room'=>$room,'floor'=>$floor,'temp'=>$temp,'type'=>$type
                 ,'powersup'=>$powersup,'fcubrand'=>$fcubrand,'fcumodel'=>$fcumodel,'fcuserial'=>$fcuserial,'size'=>$size,'acubrand'=>$acubrand
-                ,'acumodel'=>$acumodel,'acuserial'=>$acuserial,'year'=>$year,'result'=>$result,'note1'=>$note1,'mby'=>$mby));
+                ,'acumodel'=>$acumodel,'acuserial'=>$acuserial,'result'=>$result,'note1'=>$note1,'mby'=>$mby));
             return redirect()->back()->with('success','แก้ไขข้อมููลสำเร็จ !!');
             
         }
