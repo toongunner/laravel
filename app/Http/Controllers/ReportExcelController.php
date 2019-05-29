@@ -47,7 +47,7 @@ class ReportExcelController extends Controller
        $upspass = DB::table('ups')->where('result','=','ผ่าน')->count('result');
        $upsfail = DB::table('ups')->where('result','=','ไม่ผ่าน')->count('result');
        
-       $allsite = DB::table('ups')->distinct('locid')->count('locid');
+       $allsite = DB::table('meters')->distinct('locid')->count('locid');
        
        $all = $trancount + $mecount + $mdbcount + $gencount + $reccount + $battcount + $aircount + $invcount + $upscount;
        $allpass = $tranpass + $mepass + $mdbpass + $genpass + $recpass + $battpass + $airpass + $invpass + $upspass;
