@@ -203,6 +203,9 @@ class ReportExcelController extends Controller
        ->get();
        return view('reportinver',compact('inv'));
    }
-   
+   public function homeguest()
+   {
+       return view('homeguest');
+   }
    
 }
