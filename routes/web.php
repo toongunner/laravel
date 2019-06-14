@@ -24,7 +24,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/guestreport', 'ReportExcelController@homeguest');
+Route::get('/guestreport', 'ReportExcelController@homeguest')->name('homeguest');
 // Route::get('/search','SearchController@index');
 
 Route::resource('/search','SearchController');

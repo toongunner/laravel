@@ -85,7 +85,7 @@
                  	ระบบตรวจนับคุณภาพอุปกรณ์การกำลัง <b>TRUE</b>
                 </div>
                 <div class="links">
-                	<a href="guestreport">รายงานตรวจนับอุปกรณ์ทั้งหมด</a></li>
+                	<a href="{{ url('/guestreport') }}">รายงานตรวจนับอุปกรณ์ทั้งหมด</a></li>
                 </div>
                 <!-- <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
