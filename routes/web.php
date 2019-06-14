@@ -18,14 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('guestreport/', function () {
-    return view('homeguest');
-});
+
         
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/guestreport', 'HomeController@homeguest');
 // Route::get('/search','SearchController@index');
 
 Route::resource('/search','SearchController');
