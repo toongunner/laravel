@@ -50,14 +50,18 @@
             }
 
             .links > a {
-                color: #636b6f;
                 padding: 0 25px;
                 padding-top: 50px;
                 font-size: 12px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
-                text-transform: uppercase;
+                text-transform: uppercase;  
+                  background-color: #f44336;
+                  color: white;   
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
             }
 
             .m-b-md {
